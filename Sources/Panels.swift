@@ -42,13 +42,13 @@ public class Panels {
         self.parentViewController = target
         self.containerView = target.view
         self.panel = panel
-        self.parentViewController.addChildViewController(panelController)
+        self.parentViewController.addChild(panelController)
         panelHeightConstraint = self.addChildToContainer(parent: self.containerView,
                                                          child: panelController.view,
                                                          visible: config.visibleArea(),
                                                          size: config.size(for: containerView))
 
-        panelController.didMove(toParentViewController: self.parentViewController)
+        panelController.didMove(toParent: self.parentViewController)
         precondition(panel.headerHeight != nil, "The header height constraint is not set")
         precondition(panel.headerPanel != nil, "The header view is not set")
 
@@ -103,12 +103,12 @@ extension Panels {
         childView.frame = CGRect(x: 0, y: container.bounds.maxY + configuration.visibleArea(), width: container.bounds.width, height: configuration.visibleArea())
         let views = ["childView": childView]
         let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|[childView]|",
-                                                                   options: NSLayoutFormatOptions(rawValue: 0),
+                                                                   options: NSLayoutConstraint.FormatOptions(rawValue: 0),
                                                                    metrics: nil,
                                                                    views: views)
         container.addConstraints(horizontalConstraints)
         let heightConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:[childView(==\(size))]",
-            options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views)
+            options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: views)
 
         container.addConstraints(heightConstraints)
         let constraint = container.bottomAnchor.constraint(equalTo: childView.topAnchor,
@@ -129,16 +129,16 @@ extension Panels {
     private func registerKeyboardNotifications() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardWillShow(notification:)),
-                                               name: .UIKeyboardWillShow,
+                                               name: UIResponder.keyboardWillShowNotification,
                                                object: nil)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardWillHide(notification:)),
-                                               name: .UIKeyboardWillHide,
+                                               name: UIResponder.keyboardWillHideNotification,
                                                object: nil)
     }
 
     @objc private func keyboardWillShow(notification: Notification) {
-        if let keyboardFrame: NSValue = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             let keyboardRectangle = keyboardFrame.cgRectValue
             let keyboardHeight = CGFloat(keyboardRectangle.height)
             let currentValue = (isExpanded) ? configuration.size(for: containerView) : configuration.visibleArea()
