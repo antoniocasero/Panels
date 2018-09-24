@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
   s.name         = "Panels"
   s.version      = "0.1"
-  s.summary      = "Esasy and simple panel creation"
+  s.summary      = "Simple sliding panels"
   s.description  = <<-DESC
-    Your description here.
+    Add easly sliding panels to your app. Focus on the UI, let ´Panels´ do the rest.
   DESC
   s.homepage     = "https://github.com/antoniocasero/Panels"
   s.license      = { :type => "MIT", :file => "LICENSE" }

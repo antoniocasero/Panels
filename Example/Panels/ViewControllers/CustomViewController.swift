@@ -11,9 +11,9 @@ import Panels
 class CustomViewController: UIViewController {
     let panelManager = Panels()
     var panelable: Panelable!
+    var panelConfiguration: PanelConfiguration!
     override func viewDidLoad() {
         super.viewDidLoad()
-        var panelConfiguration = PanelConfiguration(storyboardName: "PanelNotifications")
         panelConfiguration.panelSize = .custom(400)
         panelable = panelManager.addPanel(with: panelConfiguration, target: self)
     }

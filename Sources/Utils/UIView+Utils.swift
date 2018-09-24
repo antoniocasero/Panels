@@ -24,8 +24,8 @@ internal extension UIView {
         superview?.addConstraint(constraint)
     }
 
-    func animateLayoutBounce(completion: (() -> Void)? = nil) {
-        UIView.animate(withDuration: 0.6,
+    func animateLayoutBounce(duration: Double = 0.6, completion: (() -> Void)? = nil) {
+        UIView.animate(withDuration: duration,
                        delay: 0,
                        usingSpringWithDamping: 0.8,
                        initialSpringVelocity: 0,

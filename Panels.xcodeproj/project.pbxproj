@@ -15,7 +15,6 @@
 		C46B14F4211DCF110019D32A /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46B14F3211DCF110019D32A /* UIViewController+Utils.swift */; };
 		C46B14F6211DCF3F0019D32A /* Panelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46B14F5211DCF3F0019D32A /* Panelable.swift */; };
 		C46B14F8211DCFC80019D32A /* PanelConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46B14F7211DCFC80019D32A /* PanelConfiguration.swift */; };
-		C4CB6D0B212553EE0078118F /* Draggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB6D0A212553EE0078118F /* Draggable.swift */; };
 		C4D63F852124720E008E587A /* PanelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D63F83212471DB008E587A /* PanelTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,7 +40,6 @@
 		C46B14F3211DCF110019D32A /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
 		C46B14F5211DCF3F0019D32A /* Panelable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Panelable.swift; sourceTree = "<group>"; };
 		C46B14F7211DCFC80019D32A /* PanelConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelConfiguration.swift; sourceTree = "<group>"; };
-		C4CB6D0A212553EE0078118F /* Draggable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Draggable.swift; sourceTree = "<group>"; };
 		C4D63F83212471DB008E587A /* PanelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,7 +98,6 @@
 				C46B14F5211DCF3F0019D32A /* Panelable.swift */,
 				C42BAE5E21381B30008F7242 /* PanelDimensions.swift */,
 				C46B14F7211DCFC80019D32A /* PanelConfiguration.swift */,
-				C4CB6D0A212553EE0078118F /* Draggable.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -253,7 +250,6 @@
 				C46B14EF211DB5D70019D32A /* Panels.swift in Sources */,
 				C42BAE5F21381B30008F7242 /* PanelDimensions.swift in Sources */,
 				C46B14F2211DCEF30019D32A /* UIView+Utils.swift in Sources */,
-				C4CB6D0B212553EE0078118F /* Draggable.swift in Sources */,
 				C46B14F8211DCFC80019D32A /* PanelConfiguration.swift in Sources */,
 				C46B14F6211DCF3F0019D32A /* Panelable.swift in Sources */,
 			);
@@ -405,7 +401,7 @@
 				PRODUCT_NAME = Panels;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -427,7 +423,7 @@
 				PRODUCT_NAME = Panels;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

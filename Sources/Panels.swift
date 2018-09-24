@@ -116,7 +116,7 @@ extension Panels {
         constraint.isActive = true
         self.delegate?.panelDidPresented()
         if self.configuration.animateEntry {
-            container.animateLayoutBounce()
+            container.animateLayoutBounce(duration:1)
         } else {
             container.layoutIfNeeded()
         }

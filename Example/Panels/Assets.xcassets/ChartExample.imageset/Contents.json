@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Etherium Classic.pdf"
+      "filename" : "ChartExample.pdf"
     }
   ],
   "info" : {
@@ -10,7 +10,6 @@
     "author" : "xcode"
   },
   "properties" : {
-    "preserves-vector-representation" : true,
-    "auto-scaling" : "auto"
+    "preserves-vector-representation" : true
   }
 }

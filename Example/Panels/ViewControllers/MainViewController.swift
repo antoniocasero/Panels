@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Panels
 
 class MainViewController: UIViewController {
+    var customConfiguration = PanelConfiguration(storyboardName: "PanelNotifications")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,5 +18,26 @@ class MainViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+    }
+    @IBAction func animationDidChange() {
+        customConfiguration.animateEntry.toggle()
+    }
+    @IBAction func tapGestureDidChange() {
+        customConfiguration.respondToTap.toggle()
+    }
+    @IBAction func dragGestureDidChange() {
+        customConfiguration.respondToDrag.toggle()
+    }
+    @IBAction func closeAutomaticallyDidChange() {
+        customConfiguration.closeOutsideTap.toggle()
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "custom" {
+            guard let destination = segue.destination as? CustomViewController else {
+                fatalError()
+            }
+            destination.panelConfiguration = customConfiguration
+        }
     }
 }

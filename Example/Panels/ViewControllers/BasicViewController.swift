@@ -14,7 +14,7 @@ class BasicViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         var panelConfiguration = PanelConfiguration(storyboardName: "PanelOptions")
-        panelConfiguration.panelSize = .fullScreen
+        panelConfiguration.panelSize = .oneThird
         panelManager.addPanel(with: panelConfiguration, target: self)
     }
 }
