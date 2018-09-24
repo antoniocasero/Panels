@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="T0b-lg-wm3">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Custom View Controller-->
+        <scene sceneID="8OO-Ni-ia7">
+            <objects>
+                <viewController id="T0b-lg-wm3" customClass="CustomViewController" customModule="Panels_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e2K-vq-CKC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Charts" translatesAutoresizingMaskIntoConstraints="NO" id="B4W-oE-qPf">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" red="0.099079334399999996" green="1" blue="0.13858901840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DVP-LF-Gcj" firstAttribute="trailing" secondItem="B4W-oE-qPf" secondAttribute="trailing" id="8jT-LZ-M48"/>
+                            <constraint firstItem="B4W-oE-qPf" firstAttribute="top" secondItem="DVP-LF-Gcj" secondAttribute="top" id="doR-g4-iaD"/>
+                            <constraint firstItem="DVP-LF-Gcj" firstAttribute="bottom" secondItem="B4W-oE-qPf" secondAttribute="bottom" id="iil-RH-y5e"/>
+                            <constraint firstItem="B4W-oE-qPf" firstAttribute="leading" secondItem="DVP-LF-Gcj" secondAttribute="leading" id="nBS-u6-wyw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DVP-LF-Gcj"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yBi-5S-dF7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="74" y="-240"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Charts" width="1500" height="3248"/>
+    </resources>
+</document>

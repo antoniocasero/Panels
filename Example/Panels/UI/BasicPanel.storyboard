@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gb7-UZ-T9q">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Basic View Controller-->
+        <scene sceneID="Cop-NO-Xp6">
+            <objects>
+                <viewController id="gb7-UZ-T9q" customClass="BasicViewController" customModule="Panels_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LxH-rG-quO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="L5W-6o-zYx">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="L5W-6o-zYx" firstAttribute="leading" secondItem="wBD-1a-hbb" secondAttribute="leading" id="Jty-4t-gph"/>
+                            <constraint firstAttribute="bottom" secondItem="L5W-6o-zYx" secondAttribute="bottom" id="XLt-TZ-ASy"/>
+                            <constraint firstItem="L5W-6o-zYx" firstAttribute="top" secondItem="LxH-rG-quO" secondAttribute="top" id="XY2-aY-heK"/>
+                            <constraint firstItem="wBD-1a-hbb" firstAttribute="trailing" secondItem="L5W-6o-zYx" secondAttribute="trailing" id="bgE-do-Elj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wBD-1a-hbb"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z25-K7-yFi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="76" y="78"/>
+        </scene>
+    </scenes>
+</document>

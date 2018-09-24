@@ -1,0 +1,16 @@
+PODS:
+  - Panels (0.1)
+
+DEPENDENCIES:
+  - Panels (from `../`)
+
+EXTERNAL SOURCES:
+  Panels:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Panels: 3406bc28161fed8cedeb1f1c0a3c71d9d39c3180
+
+PODFILE CHECKSUM: 37a23b2f0e4c406277d40efab05492a5406ef942
+
+COCOAPODS: 1.3.1
