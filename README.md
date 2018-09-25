@@ -22,7 +22,7 @@ Updated to Swift 4.2
 ## Usage
 
 First create your own panel, you can use Interface Builder (freeform viewcontroller),
-Make sure that you conform the protocol 'Panelable'
+Make sure that you conform the protocol `Panelable`
 
 ```swift
 import UIKit
@@ -40,6 +40,7 @@ to the container, expanding and collapsing. It will take care of the safe area
 Then in your main viewcontroller, where the panel is presented:
 
 ```swift
+class YourViewController: UIViewController
     let panelManager = Panels()
 
     override func viewDidLoad() {
@@ -50,6 +51,44 @@ Then in your main viewcontroller, where the panel is presented:
     }
 }
 ```
+
+If you want to get notifications when the panel is presented, collapsed or
+expanded, just conform the protocol `PanelNotifications`
+
+You can find extra options in the PanelConfiguration object:
+
+```swift
+    /// Storyboard name, the first viewcontroller will be instanciated
+    public var panelName: String
+
+    /// Panel height
+    public var panelSize: PanelDimensions
+
+    /// Panel margens between the header and the next views.
+    public var panelMargen: CGFloat
+
+    /// Visible area when the panel is collapsed
+    public var panelVisibleArea: CGFloat
+
+    /// Safe area is avoided if this flag is true.
+    public var useSafeArea = true
+
+    /// Collapse and expand when tapping the header view.
+    public var respondToTap = true
+
+    /// Collapse and expand when dragging the header view.
+    public var respondToDrag = true
+
+    /// Collapse when tapping outside the panel
+    public var closeOutsideTap = true
+
+    /// Animate the panel when the superview is shown.
+    public var animateEntry = false
+
+    /// If parent view is a navigationcontroller child, this flag allow a better calculation when the panelSize is .fullScreen
+    public var enclosedNavigationBar = true
+```
+
 
 ## Installation
 
