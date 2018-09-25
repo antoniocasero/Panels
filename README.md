@@ -15,8 +15,8 @@ is presented/dismissed.
 Updated to Swift 4.2
 
 <p float="center">
-    <img src="Resources/demo1.gif" width="237" height="471" alt="Sliding Panel demo1">
-    <img src="Resources/demo2.gif" width="237" height="471" alt="Sliding Panel demo2">
+    <img src="Resources/Demo1.gif" width="237" height="471" alt="Sliding Panel demo1">
+    <img src="Resources/Demo2.gif" width="237" height="471" alt="Sliding Panel demo2">
 </p>
 
 ## Usage
