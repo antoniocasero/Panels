@@ -114,12 +114,12 @@ extension Panels {
         let constraint = container.bottomAnchor.constraint(equalTo: childView.topAnchor,
                                                            constant: visible)
         constraint.isActive = true
-        self.delegate?.panelDidPresented()
         if self.configuration.animateEntry {
             container.animateLayoutBounce(duration:1)
         } else {
             container.layoutIfNeeded()
         }
+        self.delegate?.panelDidPresented()
         return constraint
     }
 }

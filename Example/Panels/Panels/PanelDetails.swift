@@ -9,7 +9,7 @@
 import UIKit
 import Panels
 
-class PanelNotifications: UIViewController, Panelable {
+class PanelDetails: UIViewController, Panelable {
     @IBOutlet var headerHeight: NSLayoutConstraint!
     @IBOutlet var headerPanel: UIView!
 }

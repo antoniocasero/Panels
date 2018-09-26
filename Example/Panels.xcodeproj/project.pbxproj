@@ -19,8 +19,8 @@
 		C4C47424215617EA00E9FA59 /* BasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C47423215617EA00E9FA59 /* BasicViewController.swift */; };
 		C4C4742821561B6900E9FA59 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C4742721561B6900E9FA59 /* CustomViewController.swift */; };
 		C4C4742A21561B7F00E9FA59 /* CustomPanel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4C4742921561B7F00E9FA59 /* CustomPanel.storyboard */; };
-		C4C4743021569E4000E9FA59 /* PanelNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C4742F21569E4000E9FA59 /* PanelNotifications.swift */; };
-		C4C474322156A21900E9FA59 /* PanelNotifications.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4C474312156A21900E9FA59 /* PanelNotifications.storyboard */; };
+		C4C4743021569E4000E9FA59 /* PanelDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C4742F21569E4000E9FA59 /* PanelDetails.swift */; };
+		C4C474322156A21900E9FA59 /* PanelDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4C474312156A21900E9FA59 /* PanelDetails.storyboard */; };
 		D0F2F6DB7020DAEEABCE3C85 /* Pods_Panels_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ACECF5D3511DD80AAA11FEB /* Pods_Panels_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,8 +42,8 @@
 		C4C47423215617EA00E9FA59 /* BasicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicViewController.swift; sourceTree = "<group>"; };
 		C4C4742721561B6900E9FA59 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		C4C4742921561B7F00E9FA59 /* CustomPanel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomPanel.storyboard; sourceTree = "<group>"; };
-		C4C4742F21569E4000E9FA59 /* PanelNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelNotifications.swift; sourceTree = "<group>"; };
-		C4C474312156A21900E9FA59 /* PanelNotifications.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PanelNotifications.storyboard; sourceTree = "<group>"; };
+		C4C4742F21569E4000E9FA59 /* PanelDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelDetails.swift; sourceTree = "<group>"; };
+		C4C474312156A21900E9FA59 /* PanelDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PanelDetails.storyboard; sourceTree = "<group>"; };
 		EA44856D0219DF175E5A2381 /* Pods-Panels_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Panels_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Panels_Example/Pods-Panels_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,8 +79,8 @@
 		C45C1702211ED30600F3FBE6 /* Panels */ = {
 			isa = PBXGroup;
 			children = (
-				C4C4742F21569E4000E9FA59 /* PanelNotifications.swift */,
-				C4C474312156A21900E9FA59 /* PanelNotifications.storyboard */,
+				C4C4742F21569E4000E9FA59 /* PanelDetails.swift */,
+				C4C474312156A21900E9FA59 /* PanelDetails.storyboard */,
 				C45C1703211ED32600F3FBE6 /* PanelOptions.swift */,
 				C46D50FF2122FBE0005AAC07 /* PanelOptions.storyboard */,
 			);
@@ -213,7 +213,7 @@
 			files = (
 				C4951F31211ECFFB001923B9 /* LaunchScreen.storyboard in Resources */,
 				C428F24A2142A6A3002DE6BF /* BasicPanel.storyboard in Resources */,
-				C4C474322156A21900E9FA59 /* PanelNotifications.storyboard in Resources */,
+				C4C474322156A21900E9FA59 /* PanelDetails.storyboard in Resources */,
 				C4C4742A21561B7F00E9FA59 /* CustomPanel.storyboard in Resources */,
 				C4951F2E211ECFFB001923B9 /* Assets.xcassets in Resources */,
 				C46D51002122FBE0005AAC07 /* PanelOptions.storyboard in Resources */,
@@ -285,7 +285,7 @@
 				C4951F29211ECFFA001923B9 /* MainViewController.swift in Sources */,
 				C4C47424215617EA00E9FA59 /* BasicViewController.swift in Sources */,
 				C4C4742821561B6900E9FA59 /* CustomViewController.swift in Sources */,
-				C4C4743021569E4000E9FA59 /* PanelNotifications.swift in Sources */,
+				C4C4743021569E4000E9FA59 /* PanelDetails.swift in Sources */,
 				C45C1704211ED32600F3FBE6 /* PanelOptions.swift in Sources */,
 				C428F24721426877002DE6BF /* UIVIew+Utils.swift in Sources */,
 				C4951F27211ECFFA001923B9 /* AppDelegate.swift in Sources */,

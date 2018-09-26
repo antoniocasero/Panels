@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Panel Notifications-->
+        <!--Panel Details-->
         <scene sceneID="3Nk-VF-RYm">
             <objects>
-                <viewController id="4Ik-me-ahI" customClass="PanelNotifications" customModule="Panels_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="4Ik-me-ahI" customClass="PanelDetails" customModule="Panels_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ads-DO-kaL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

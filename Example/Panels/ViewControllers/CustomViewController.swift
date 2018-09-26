@@ -16,5 +16,24 @@ class CustomViewController: UIViewController {
         super.viewDidLoad()
         panelConfiguration.panelSize = .custom(400)
         panelable = panelManager.addPanel(with: panelConfiguration, target: self)
+        panelManager.delegate = self
+    }
+}
+
+extension CustomViewController: PanelNotifications {
+    func panelDidPresented() {
+        print("Panel is presented")
+    }
+
+    func panelDidCollapse() {
+        print("Panel did collapse")
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+
+    }
+
+    func panelDidOpen() {
+        print("Panel did open")
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+
     }
 }
