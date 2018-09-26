@@ -38,6 +38,8 @@ public struct PanelConfiguration {
     /// Animate the panel when the superview is shown.
     public var animateEntry = false
 
+    /// If parent view is a navigationcontroller child, this flag allow a better
+    /// calculation when the panelSize is .fullScreen
     public var enclosedNavigationBar = true
 
     public init(storyboardName: String, size: PanelDimensions = .thirdQuarter, margen: CGFloat = 8.0, visibleArea: CGFloat = 64.0) {
