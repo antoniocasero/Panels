@@ -1,6 +1,8 @@
 # Panels
 
 [![Carthage compatible](https://img.shields.io/badge/Carthage-Compatible-brightgreen.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![CocoaPods](https://img.shields.io/badge/pod-v1.0.0-blue.svg)](https://github.com/antoniocasero/Panels)
+
 [![Platform](http://img.shields.io/badge/platform-ios-blue.svg?style=flat
 )](https://developer.apple.com/iphone/index.action)
 [![Language](http://img.shields.io/badge/language-swift-brightgreen.svg?style=flat
@@ -9,7 +11,7 @@
 
 
 Panels is a framework to easily add sliding panels to your application.
-It takes care the safe area in new devices and moving your panel when keyboard
+It takes care of the safe area in new devices and moving your panel when the keyboard
 is presented/dismissed.
 
 Updated to Swift 4.2
@@ -21,7 +23,7 @@ Updated to Swift 4.2
 
 ## Usage
 
-First create your own panel, you can use Interface Builder (freeform viewcontroller),
+First, create your own panel, you can use Interface Builder, use as reference the examples provided.
 Make sure that you conform the protocol `Panelable`
 
 ```swift
@@ -37,7 +39,7 @@ This protocol defines the interface needed to be able to adjust the sliding pane
 to the container, expanding and collapsing. It will take care of the safe area
 
 
-Then in your main viewcontroller, where the panel is presented:
+Then in your  ViewController, where the panel is presented:
 
 ```swift
 class YourViewController: UIViewController
@@ -55,16 +57,16 @@ class YourViewController: UIViewController
 If you want to get notifications when the panel is presented, collapsed or
 expanded, just conform the protocol `PanelNotifications`
 
-You can find extra options in the PanelConfiguration object:
+You can find extra options in the `PanelConfiguration` object:
 
 ```swift
-    /// Storyboard name, the first viewcontroller will be instanciated
+    /// Storyboard name, the first Viewcontroller will be instantiated
     public var panelName: String
 
     /// Panel height
     public var panelSize: PanelDimensions
 
-    /// Panel margens between the header and the next views.
+    /// Panel margins between the header and the next views.
     public var panelMargen: CGFloat
 
     /// Visible area when the panel is collapsed
