@@ -1,4 +1,6 @@
-# Panels
+<p align="center">
+  <img width="420" src="Resources/PanelsLogo.png"/>
+</p>
 
 [![Carthage compatible](https://img.shields.io/badge/Carthage-Compatible-brightgreen.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods](https://img.shields.io/badge/pod-v1.0.0-blue.svg)](https://github.com/antoniocasero/Panels)
