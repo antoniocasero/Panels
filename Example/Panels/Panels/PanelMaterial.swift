@@ -14,8 +14,9 @@ class PanelMaterial: UIViewController, Panelable {
     @IBOutlet var headerPanel: UIView!
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-        curveTopCorners()
         self.view.addBlurBackground()
+        curveTopCorners()
+        self.view.layoutIfNeeded()
+        super.viewDidLoad()
     }
 }

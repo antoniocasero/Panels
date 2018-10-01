@@ -15,19 +15,9 @@ class MaterialViewController: UIViewController {
         super.viewDidLoad()
         var panelConfiguration = PanelConfiguration(storyboardName: "PanelMaterial")
         panelConfiguration.panelSize = .half
-        panelManager.addPanel(with: panelConfiguration, target: self)
-        // Do any additional setup after loading the view.
+        panelConfiguration.animateEntry = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.panelManager.addPanel(with: panelConfiguration, target: self)
+        }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

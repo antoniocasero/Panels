@@ -26,6 +26,7 @@ public class Panels {
     ///   - config: Configuration panel, there you can define the panel behaviour
     ///   - target: Viewcontroller where the panel will be added as subview.
     /// - Returns:
+    ///   - Panelable object
     @discardableResult
     public func addPanel(with config: PanelConfiguration, target: UIViewController) -> Panelable {
 
@@ -115,9 +116,9 @@ extension Panels {
                                                            constant: visible)
         constraint.isActive = true
         if self.configuration.animateEntry {
-            container.animateLayoutBounce(duration:1)
+            childView.animateLayoutBounce(duration: 1)
         } else {
-            container.layoutIfNeeded()
+            childView.layoutIfNeeded()
         }
         self.delegate?.panelDidPresented()
         return constraint

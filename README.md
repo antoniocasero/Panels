@@ -1,4 +1,6 @@
-# Panels
+<p align="center">
+  <img width="420" src="Resources/PanelsLogo.png"/>
+</p>
 
 [![Carthage compatible](https://img.shields.io/badge/Carthage-Compatible-brightgreen.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods](https://img.shields.io/badge/pod-v1.0.0-blue.svg)](https://github.com/antoniocasero/Panels)
@@ -19,6 +21,8 @@ Updated to Swift 4.2
 <p float="center">
     <img src="Resources/Demo1.gif" width="237" height="471" alt="Sliding Panel demo1">
     <img src="Resources/Demo2.gif" width="237" height="471" alt="Sliding Panel demo2">
+    <img src="Resources/Demo3.gif" width="237" height="471" alt="Sliding Panel demo3">
+
 </p>
 
 ## Usage
