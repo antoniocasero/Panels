@@ -39,4 +39,16 @@ import UIKit
         }
     }
 
+    func addBlurBackground() {
+        self.backgroundColor = .clear
+        let blurEffect = UIBlurEffect(style: .dark)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.translatesAutoresizingMaskIntoConstraints = false
+        self.insertSubview(blurView, at: 0)
+        NSLayoutConstraint.activate([
+            blurView.heightAnchor.constraint(equalTo: self.heightAnchor),
+            blurView.widthAnchor.constraint(equalTo: self.widthAnchor),
+            ])
+
+    }
 }

@@ -10,6 +10,11 @@
 		C428F24721426877002DE6BF /* UIVIew+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C428F24621426877002DE6BF /* UIVIew+Utils.swift */; };
 		C428F24A2142A6A3002DE6BF /* BasicPanel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C428F2492142A6A3002DE6BF /* BasicPanel.storyboard */; };
 		C45C1704211ED32600F3FBE6 /* PanelOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45C1703211ED32600F3FBE6 /* PanelOptions.swift */; };
+		C4696A5B2160A46000A93C98 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4696A5A2160A46000A93C98 /* UIViewController+Utils.swift */; };
+		C4696A5D2160A4E200A93C98 /* PanelMaterial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4696A5C2160A4E200A93C98 /* PanelMaterial.storyboard */; };
+		C4696A5F2160A6E700A93C98 /* MaterialPanel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4696A5E2160A6E700A93C98 /* MaterialPanel.storyboard */; };
+		C4696A612160A7B600A93C98 /* MaterialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4696A602160A7B600A93C98 /* MaterialViewController.swift */; };
+		C4696A632160A91000A93C98 /* PanelMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4696A622160A91000A93C98 /* PanelMaterial.swift */; };
 		C46D51002122FBE0005AAC07 /* PanelOptions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C46D50FF2122FBE0005AAC07 /* PanelOptions.storyboard */; };
 		C4951F27211ECFFA001923B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4951F26211ECFFA001923B9 /* AppDelegate.swift */; };
 		C4951F29211ECFFA001923B9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4951F28211ECFFA001923B9 /* MainViewController.swift */; };
@@ -31,6 +36,11 @@
 		C428F2492142A6A3002DE6BF /* BasicPanel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BasicPanel.storyboard; sourceTree = "<group>"; };
 		C42BAE5D213690D8008F7242 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
 		C45C1703211ED32600F3FBE6 /* PanelOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelOptions.swift; sourceTree = "<group>"; };
+		C4696A5A2160A46000A93C98 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
+		C4696A5C2160A4E200A93C98 /* PanelMaterial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PanelMaterial.storyboard; sourceTree = "<group>"; };
+		C4696A5E2160A6E700A93C98 /* MaterialPanel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MaterialPanel.storyboard; sourceTree = "<group>"; };
+		C4696A602160A7B600A93C98 /* MaterialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialViewController.swift; sourceTree = "<group>"; };
+		C4696A622160A91000A93C98 /* PanelMaterial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelMaterial.swift; sourceTree = "<group>"; };
 		C46D50FF2122FBE0005AAC07 /* PanelOptions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PanelOptions.storyboard; sourceTree = "<group>"; };
 		C4951F23211ECFFA001923B9 /* Panels_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Panels_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4951F26211ECFFA001923B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				C428F24621426877002DE6BF /* UIVIew+Utils.swift */,
+				C4696A5A2160A46000A93C98 /* UIViewController+Utils.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -83,6 +94,8 @@
 				C4C474312156A21900E9FA59 /* PanelDetails.storyboard */,
 				C45C1703211ED32600F3FBE6 /* PanelOptions.swift */,
 				C46D50FF2122FBE0005AAC07 /* PanelOptions.storyboard */,
+				C4696A5C2160A4E200A93C98 /* PanelMaterial.storyboard */,
+				C4696A622160A91000A93C98 /* PanelMaterial.swift */,
 			);
 			path = Panels;
 			sourceTree = "<group>";
@@ -126,6 +139,7 @@
 				C4C4742721561B6900E9FA59 /* CustomViewController.swift */,
 				C4951F28211ECFFA001923B9 /* MainViewController.swift */,
 				C4C47423215617EA00E9FA59 /* BasicViewController.swift */,
+				C4696A602160A7B600A93C98 /* MaterialViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -137,6 +151,7 @@
 				C4951F2F211ECFFB001923B9 /* LaunchScreen.storyboard */,
 				C428F2492142A6A3002DE6BF /* BasicPanel.storyboard */,
 				C4C4742921561B7F00E9FA59 /* CustomPanel.storyboard */,
+				C4696A5E2160A6E700A93C98 /* MaterialPanel.storyboard */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -216,8 +231,10 @@
 				C4C474322156A21900E9FA59 /* PanelDetails.storyboard in Resources */,
 				C4C4742A21561B7F00E9FA59 /* CustomPanel.storyboard in Resources */,
 				C4951F2E211ECFFB001923B9 /* Assets.xcassets in Resources */,
+				C4696A5F2160A6E700A93C98 /* MaterialPanel.storyboard in Resources */,
 				C46D51002122FBE0005AAC07 /* PanelOptions.storyboard in Resources */,
 				C4951F2C211ECFFA001923B9 /* Main.storyboard in Resources */,
+				C4696A5D2160A4E200A93C98 /* PanelMaterial.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,9 +299,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4696A5B2160A46000A93C98 /* UIViewController+Utils.swift in Sources */,
 				C4951F29211ECFFA001923B9 /* MainViewController.swift in Sources */,
 				C4C47424215617EA00E9FA59 /* BasicViewController.swift in Sources */,
+				C4696A632160A91000A93C98 /* PanelMaterial.swift in Sources */,
 				C4C4742821561B6900E9FA59 /* CustomViewController.swift in Sources */,
+				C4696A612160A7B600A93C98 /* MaterialViewController.swift in Sources */,
 				C4C4743021569E4000E9FA59 /* PanelDetails.swift in Sources */,
 				C45C1704211ED32600F3FBE6 /* PanelOptions.swift in Sources */,
 				C428F24721426877002DE6BF /* UIVIew+Utils.swift in Sources */,

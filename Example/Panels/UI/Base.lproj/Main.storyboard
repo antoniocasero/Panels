@@ -24,8 +24,8 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="2iG-DX-4YW">
                                         <rect key="frame" x="16" y="13.5" width="206" height="37.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Basic configuration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZxH-O3-QVQ">
-                                                <rect key="frame" x="0.0" y="0.0" width="140" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Basic example" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZxH-O3-QVQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="107" height="20.5"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -77,8 +77,67 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Sp-Uw-5eF" userLabel="Card">
+                                <rect key="frame" x="8" y="140" width="359" height="64"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="BqW-Ah-Klu">
+                                        <rect key="frame" x="16" y="13.5" width="199" height="37.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Material" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FGg-Um-HRq">
+                                                <rect key="frame" x="0.0" y="0.0" width="57.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Panel to replicate material design" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncu-mb-Jiu">
+                                                <rect key="frame" x="0.0" y="20.5" width="199" height="17"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jYk-IX-Gj0">
+                                        <rect key="frame" x="263" y="17" width="80" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="7xe-yH-naW"/>
+                                        </constraints>
+                                        <state key="normal" title="GO">
+                                            <color key="titleShadowColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="9uF-i3-UQw" kind="show" id="uNF-tI-ENW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="jYk-IX-Gj0" secondAttribute="trailing" constant="16" id="Ghw-MT-7aK"/>
+                                    <constraint firstItem="jYk-IX-Gj0" firstAttribute="centerY" secondItem="1Sp-Uw-5eF" secondAttribute="centerY" id="MWa-Uu-14F"/>
+                                    <constraint firstItem="jYk-IX-Gj0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1Sp-Uw-5eF" secondAttribute="leading" constant="20" symbolic="YES" id="NsA-Xp-IdW"/>
+                                    <constraint firstAttribute="height" constant="64" id="Ntm-t8-Efq"/>
+                                    <constraint firstItem="BqW-Ah-Klu" firstAttribute="leading" secondItem="1Sp-Uw-5eF" secondAttribute="leading" constant="16" id="hdO-UY-2jS"/>
+                                    <constraint firstItem="BqW-Ah-Klu" firstAttribute="centerY" secondItem="1Sp-Uw-5eF" secondAttribute="centerY" id="huE-J9-BRX"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MqO-Mg-ef8" userLabel="Card">
-                                <rect key="frame" x="8" y="151" width="359" height="300"/>
+                                <rect key="frame" x="8" y="212" width="359" height="300"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Different Styles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qah-vw-nXE">
                                         <rect key="frame" x="16" y="16" width="109" height="20.5"/>
@@ -220,9 +279,12 @@
                         <constraints>
                             <constraint firstItem="5Qm-tp-Y93" firstAttribute="leading" secondItem="MqO-Mg-ef8" secondAttribute="leading" id="Ccl-wa-Gd3"/>
                             <constraint firstItem="5Qm-tp-Y93" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.3" id="Ejb-u6-gdf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1Sp-Uw-5eF" secondAttribute="trailing" constant="8" id="Uj7-xi-sP8"/>
+                            <constraint firstItem="MqO-Mg-ef8" firstAttribute="top" secondItem="1Sp-Uw-5eF" secondAttribute="bottom" constant="8" id="ZaP-oW-iEw"/>
+                            <constraint firstItem="1Sp-Uw-5eF" firstAttribute="top" secondItem="5Qm-tp-Y93" secondAttribute="bottom" constant="8" id="c43-vM-8Wx"/>
                             <constraint firstItem="5Qm-tp-Y93" firstAttribute="trailing" secondItem="MqO-Mg-ef8" secondAttribute="trailing" id="cA8-tH-F7O"/>
+                            <constraint firstItem="1Sp-Uw-5eF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="cIW-Gk-jBu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MqO-Mg-ef8" secondAttribute="trailing" constant="8" id="gjQ-Hj-CeP"/>
-                            <constraint firstItem="MqO-Mg-ef8" firstAttribute="top" secondItem="5Qm-tp-Y93" secondAttribute="bottom" constant="19" id="wNX-CB-NM5"/>
                             <constraint firstItem="MqO-Mg-ef8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="zSW-7G-eWe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -239,7 +301,15 @@
                 <viewControllerPlaceholder storyboardName="BasicPanel" id="gPb-GU-QUh" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s3Z-UR-2TX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1332.8" y="-93.553223388305852"/>
+            <point key="canvasLocation" x="1333" y="51"/>
+        </scene>
+        <!--MaterialPanel-->
+        <scene sceneID="UxS-pJ-v3d">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MaterialPanel" id="9uF-i3-UQw" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ToP-bj-bO7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1386" y="116"/>
         </scene>
         <!--CustomPanel-->
         <scene sceneID="rxo-iU-aOe">
@@ -247,7 +317,7 @@
                 <viewControllerPlaceholder storyboardName="CustomPanel" id="a82-4u-VVp" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e8g-oS-xIj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1333.5999999999999" y="202.39880059970017"/>
+            <point key="canvasLocation" x="1344" y="172"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="w0g-oW-gQ5">

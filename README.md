@@ -95,12 +95,13 @@ You can find extra options in the `PanelConfiguration` object:
 ## Installation
 
 ### CocoaPods
-
 Add the line `pod "Panels"` to your `Podfile`
 
 ### Carthage
 Add the line `github "antoniocasero/Panels"` to your `Cartfile`
 
 ## Author
-
 Project created by Antonio Casero ([@acaserop](https://twitter.com/acaserop) on Twitter).
+
+## Credits
+Sketch UI ([Elements](https://sketchapp.com/elements)

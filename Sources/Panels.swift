@@ -31,7 +31,7 @@ public class Panels {
 
         guard let panelController = UIStoryboard(name: config.panelName,
                                                  bundle: nil).instantiateInitialViewController()  else {
-            fatalError("Could not find the panel")
+            fatalError("Could not find the panel with name \(config.panelName)")
         }
 
         guard let panel = panelController as? Panelable else {
