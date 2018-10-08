@@ -11,9 +11,6 @@ import UIKit
 
 public struct PanelConfiguration {
 
-    /// Storyboard name, the first viewcontroller will be instanciated
-    public var panelName: String
-
     /// Panel height
     public var panelSize: PanelDimensions
 
@@ -42,8 +39,9 @@ public struct PanelConfiguration {
     /// calculation when the panelSize is .fullScreen
     public var enclosedNavigationBar = true
 
-    public init(storyboardName: String, size: PanelDimensions = .thirdQuarter, margen: CGFloat = 8.0, visibleArea: CGFloat = 64.0) {
-        self.panelName = storyboardName
+    public init(size: PanelDimensions = .thirdQuarter,
+                margen: CGFloat = 8.0,
+                visibleArea: CGFloat = 64.0) {
         self.panelSize = size
         self.panelMargen = margen
         self.panelVisibleArea = visibleArea
@@ -59,5 +57,4 @@ public struct PanelConfiguration {
         let visible = self.panelVisibleArea + UIApplication.safeAreaBottom() + (2 * panelMargen)
         return visible
     }
-
 }

@@ -11,54 +11,40 @@ public class Panels {
         return (panelHeightConstraint?.constant ?? 0.0) > configuration.visibleArea()
     }
 
-    private weak var panel: Panelable!
+    private weak var panel: (Panelable & UIViewController)!
     private weak var parentViewController: UIViewController!
     private weak var containerView: UIView!
     private weak var panelHeightConstraint: NSLayoutConstraint?
     private var configuration: PanelConfiguration!
-    internal var animator: UIViewPropertyAnimator = UIViewPropertyAnimator()
 
-    public init() {}
+    public init(target: UIViewController) {
+        self.parentViewController = target
+    }
 
     /// Add a viewcontainer to the view target. This subview is the panel definded in
     /// a storyboard and conform the protocol Panelable.
     /// - Parameters:
     ///   - config: Configuration panel, there you can define the panel behaviour
     ///   - target: Viewcontroller where the panel will be added as subview.
-    /// - Returns:
-    ///   - Panelable object
-    @discardableResult
-    public func addPanel(with config: PanelConfiguration, target: UIViewController) -> Panelable {
-
-        guard let panelController = UIStoryboard(name: config.panelName,
-                                                 bundle: nil).instantiateInitialViewController()  else {
-            fatalError("Could not find the panel with name \(config.panelName)")
-        }
-
-        guard let panel = panelController as? Panelable else {
-            fatalError("Your panel does not conform to Panelable")
-        }
+    ///   - view: Alternative view to viewController.view
+    public func show(panel: Panelable & UIViewController,
+                     config: PanelConfiguration = PanelConfiguration(),
+                     view: UIView? = nil) {
 
         self.configuration = config
-        self.parentViewController = target
-        self.containerView = target.view
+        self.containerView = view ?? parentViewController.view
         self.panel = panel
-        self.parentViewController.addChild(panelController)
+        self.parentViewController.addContainer(container: panel)
         panelHeightConstraint = self.addChildToContainer(parent: self.containerView,
-                                                         child: panelController.view,
+                                                         child: panel.view,
                                                          visible: config.visibleArea(),
                                                          size: config.size(for: containerView))
 
-        panelController.didMove(toParent: self.parentViewController)
-        precondition(panel.headerHeight != nil, "The header height constraint is not set")
-        precondition(panel.headerPanel != nil, "The header view is not set")
-
-        panelController.hideKeyboardAutomatically()
+        panel.hideKeyboardAutomatically()
         registerKeyboardNotifications()
         //Prepare the view placement, saving the safeArea.
         self.panel.headerHeight.constant += UIApplication.safeAreaBottom()
         setupGestures(headerView: panel.headerPanel, superview: containerView)
-        return panel
     }
 
     /// Opens the panel
@@ -77,6 +63,14 @@ public class Panels {
         movePanel(value: configuration.visibleArea())
         self.containerView.endEditing(true)
     }
+
+    public func dismiss(completion: (()->Void)? = nil) {
+        movePanel(value: 0, completion: {
+            self.panel.removeContainer()
+            completion?()
+        })
+    }
+
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
@@ -85,13 +79,13 @@ public class Panels {
 // MARK: Private functions
 
 extension Panels {
-    private func movePanel(value: CGFloat, for keyboard: Bool = false) {
+    private func movePanel(value: CGFloat, keyboard: Bool = false, completion: (()->Void)? = nil) {
         panelHeightConstraint!.constant = value
         if !keyboard {
             panel.headerHeight.constant += isExpanded ? -(UIApplication.safeAreaBottom()) : UIApplication.safeAreaBottom()
         }
         isExpanded ? self.delegate?.panelDidOpen() : self.delegate?.panelDidCollapse()
-        containerView.animateLayoutBounce()
+        containerView.animateLayoutBounce(completion: completion)
     }
 
     private func addChildToContainer(parent container: UIView,
@@ -99,7 +93,6 @@ extension Panels {
                                      visible: CGFloat,
                                      size: CGFloat) -> NSLayoutConstraint {
         childView.translatesAutoresizingMaskIntoConstraints = false
-        container.addSubview(childView)
         //Bottom
         childView.frame = CGRect(x: 0, y: container.bounds.maxY + configuration.visibleArea(), width: container.bounds.width, height: configuration.visibleArea())
         let views = ["childView": childView]
@@ -143,7 +136,7 @@ extension Panels {
             let keyboardRectangle = keyboardFrame.cgRectValue
             let keyboardHeight = CGFloat(keyboardRectangle.height)
             let currentValue = (isExpanded) ? configuration.size(for: containerView) : configuration.visibleArea()
-            movePanel(value: currentValue + keyboardHeight, for: true)
+            movePanel(value: currentValue + keyboardHeight, keyboard: true)
         }
     }
 
@@ -170,7 +163,6 @@ extension Panels {
             headerView.addGestureRecognizer(swipeDown)
         }
 
-        // Collapse when you tap outside the panel
         if self.configuration.closeOutsideTap {
             let tapGestureOutside = UITapGestureRecognizer(target: self, action: #selector(collapsePanel))
             tapGestureOutside.cancelsTouchesInView = false

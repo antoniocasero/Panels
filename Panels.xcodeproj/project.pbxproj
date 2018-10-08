@@ -15,7 +15,7 @@
 		C46B14F4211DCF110019D32A /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46B14F3211DCF110019D32A /* UIViewController+Utils.swift */; };
 		C46B14F6211DCF3F0019D32A /* Panelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46B14F5211DCF3F0019D32A /* Panelable.swift */; };
 		C46B14F8211DCFC80019D32A /* PanelConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46B14F7211DCFC80019D32A /* PanelConfiguration.swift */; };
-		C4D63F852124720E008E587A /* PanelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D63F83212471DB008E587A /* PanelTests.swift */; };
+		C4C44C7B216BF4F900044599 /* UIStoryBoard+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C44C7A216BF4F900044599 /* UIStoryBoard+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +40,7 @@
 		C46B14F3211DCF110019D32A /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
 		C46B14F5211DCF3F0019D32A /* Panelable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Panelable.swift; sourceTree = "<group>"; };
 		C46B14F7211DCFC80019D32A /* PanelConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelConfiguration.swift; sourceTree = "<group>"; };
-		C4D63F83212471DB008E587A /* PanelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelTests.swift; sourceTree = "<group>"; };
+		C4C44C7A216BF4F900044599 /* UIStoryBoard+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryBoard+Utils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +114,7 @@
 		C46B14F0211DCED70019D32A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				C4C44C7A216BF4F900044599 /* UIStoryBoard+Utils.swift */,
 				C46B14F1211DCEF30019D32A /* UIView+Utils.swift */,
 				C46B14F3211DCF110019D32A /* UIViewController+Utils.swift */,
 			);
@@ -132,7 +133,6 @@
 			isa = PBXGroup;
 			children = (
 				AD2FAA281CD0B6E100659CF4 /* PanelsTests.plist */,
-				C4D63F83212471DB008E587A /* PanelTests.swift */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -250,6 +250,7 @@
 				C46B14EF211DB5D70019D32A /* Panels.swift in Sources */,
 				C42BAE5F21381B30008F7242 /* PanelDimensions.swift in Sources */,
 				C46B14F2211DCEF30019D32A /* UIView+Utils.swift in Sources */,
+				C4C44C7B216BF4F900044599 /* UIStoryBoard+Utils.swift in Sources */,
 				C46B14F8211DCFC80019D32A /* PanelConfiguration.swift in Sources */,
 				C46B14F6211DCF3F0019D32A /* Panelable.swift in Sources */,
 			);
@@ -259,7 +260,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4D63F852124720E008E587A /* PanelTests.swift in Sources */,
 				8933C7901EB5B82D000D00A4 /* PanelsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

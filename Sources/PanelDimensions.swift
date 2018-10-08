@@ -14,7 +14,7 @@ import UIKit
 /// - thirdQuarter: Expanded panel will fill 3/4 of the container view.
 /// - custom: Absolute size. 
 
-public enum PanelDimensions {
+public enum PanelDimensions: Equatable {
     case oneThird
     case half
     case thirdQuarter
