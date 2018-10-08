@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Panels"
-  s.version      = "1.0.0"
+  s.version      = "2.0.0"
   s.summary      = "Simple sliding panels"
   s.description  = <<-DESC
     Add easly sliding panels to your app. Focus on the UI, let ´Panels´ do the rest.
