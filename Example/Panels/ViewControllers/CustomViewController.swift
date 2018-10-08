@@ -9,13 +9,13 @@
 import UIKit
 import Panels
 class CustomViewController: UIViewController {
-    let panelManager = Panels()
-    var panelable: Panelable!
+    lazy var panelManager = Panels(target: self)
+    lazy var panel = UIStoryboard.instantiatePanel(identifier: "PanelDetails")
     var panelConfiguration: PanelConfiguration!
     override func viewDidLoad() {
         super.viewDidLoad()
         panelConfiguration.panelSize = .custom(400)
-        panelable = panelManager.addPanel(with: panelConfiguration, target: self)
+        panelManager.show(panel: panel, config: panelConfiguration)
         panelManager.delegate = self
     }
 }

@@ -2,5 +2,4 @@ use_frameworks!
 
 target 'Panels_Example' do
   pod 'Panels', :path => '../'
-  pod 'ArrowPanels'
 end

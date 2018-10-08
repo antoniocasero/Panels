@@ -176,7 +176,6 @@
 				C4951F20211ECFFA001923B9 /* Frameworks */,
 				C4951F21211ECFFA001923B9 /* Resources */,
 				676378DD72C6127E165C1386 /* [CP] Embed Pods Frameworks */,
-				9DFDB2E51086814E88B7AEBA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -275,21 +274,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Panels_Example/Pods-Panels_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9DFDB2E51086814E88B7AEBA /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Panels_Example/Pods-Panels_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -456,10 +440,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Panels/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Uttopia.Panels-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -475,10 +456,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Panels/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Uttopia.Panels-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

@@ -10,11 +10,11 @@ import UIKit
 import Panels
 
 class BasicViewController: UIViewController {
-    let panelManager = Panels()
+    lazy var panelManager = Panels(target: self)
+    lazy var panel = UIStoryboard.instantiatePanel(identifier: "PanelOptions")
     override func viewDidLoad() {
         super.viewDidLoad()
-        var panelConfiguration = PanelConfiguration(storyboardName: "PanelOptions")
-        panelConfiguration.panelSize = .oneThird
-        panelManager.addPanel(with: panelConfiguration, target: self)
+        let panelConfiguration = PanelConfiguration(size: .oneThird)
+        panelManager.show(panel: self.panel, config: panelConfiguration)
     }
 }

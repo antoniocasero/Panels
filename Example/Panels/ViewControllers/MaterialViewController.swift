@@ -10,14 +10,17 @@ import UIKit
 import Panels
 
 class MaterialViewController: UIViewController {
-    let panelManager = Panels()
+    lazy var panelManager = Panels(target: self)
     override func viewDidLoad() {
         super.viewDidLoad()
-        var panelConfiguration = PanelConfiguration(storyboardName: "PanelMaterial")
-        panelConfiguration.panelSize = .half
+        let panel = UIStoryboard.instantiatePanel(identifier: "PanelMaterial")
+        var panelConfiguration = PanelConfiguration(size: .half)
         panelConfiguration.animateEntry = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.panelManager.addPanel(with: panelConfiguration, target: self)
+            self.panelManager.show(panel: panel, config: panelConfiguration)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.panelManager.dismiss()
         }
     }
 }

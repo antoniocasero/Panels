@@ -10,7 +10,7 @@ import UIKit
 import Panels
 
 class MainViewController: UIViewController {
-    var customConfiguration = PanelConfiguration(storyboardName: "PanelDetails")
+    var customConfiguration = PanelConfiguration()
 
     override func viewDidLoad() {
         super.viewDidLoad()
