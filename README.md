@@ -22,7 +22,6 @@ Updated to Swift 4.2
     <img src="Resources/Demo1.gif" width="237" height="471" alt="Sliding Panel demo1">
     <img src="Resources/Demo2.gif" width="237" height="471" alt="Sliding Panel demo2">
     <img src="Resources/Demo3.gif" width="237" height="471" alt="Sliding Panel demo3">
-
 </p>
 
 ## Usage
@@ -46,16 +45,21 @@ to the container, expanding and collapsing. It will take care of the safe area
 Then in your  ViewController, where the panel is presented:
 
 ```swift
-class YourViewController: UIViewController
-    let panelManager = Panels()
-
+class YourViewController: UIViewController {
+    lazy var panelManager = Panels(target: self)
     override func viewDidLoad() {
         super.viewDidLoad()
-        var panelConfiguration = PanelConfiguration(storyboardName: "PanelOptions")
-        panelConfiguration.panelSize = .oneThird
-        panelManager.addPanel(with: panelConfiguration, target: self)
+        let panel = UIStoryboard.instantiatePanel(identifier: "YourPanelName")
+        let panelConfiguration = PanelConfiguration(size: .oneThird)
+        
+        // To present the panel
+        panelManager.show(panel: self.panel, config: panelConfiguration)
+        ....
+        // To dismiss the panel
+        panelManager.dismiss()
     }
 }
+
 ```
 
 If you want to get notifications when the panel is presented, collapsed or

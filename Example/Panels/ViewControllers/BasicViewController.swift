@@ -11,9 +11,9 @@ import Panels
 
 class BasicViewController: UIViewController {
     lazy var panelManager = Panels(target: self)
-    lazy var panel = UIStoryboard.instantiatePanel(identifier: "PanelOptions")
     override func viewDidLoad() {
         super.viewDidLoad()
+        let panel = UIStoryboard.instantiatePanel(identifier: "PanelOptions")
         let panelConfiguration = PanelConfiguration(size: .oneThird)
         panelManager.show(panel: self.panel, config: panelConfiguration)
     }
