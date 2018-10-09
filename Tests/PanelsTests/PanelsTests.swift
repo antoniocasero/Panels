@@ -42,26 +42,26 @@ class PanelTests: XCTestCase {
         panel = nil
     }
 
-    func testValidDefaultConfiguration(){
+    func testValidDefaultConfiguration() {
         let config = PanelConfiguration()
         XCTAssertNotNil(config)
         XCTAssertEqual(config.panelSize, .thirdQuarter)
         XCTAssertEqual(config.panelMargen, 8)
         XCTAssertTrue(config.useSafeArea)
     }
-    func testPanelSizeWithoutNavBar(){
+    func testPanelSizeWithoutNavBar() {
         let dimensions: PanelDimensions = .half
         let expectedDimension = dimensions.translate(for: panel.view, navController: false)
         XCTAssertEqual(expectedDimension, panel.view.bounds.height / 2)
     }
 
-    func testPanelSizeWithNavBar(){
+    func testPanelSizeWithNavBar() {
         let dimensions: PanelDimensions = .fullScreen
         let expectedDimension = dimensions.translate(for: parent.view, navController: true)
         XCTAssertEqual(expectedDimension, parent.view.bounds.height - 44)
     }
 
-    func testPanelCreation(){
+    func testPanelCreation() {
         let panelManager = Panels(target: parent)
         let config = PanelConfiguration(size: .half, visibleArea: 20)
         panelManager.show(panel: panel, config: config)

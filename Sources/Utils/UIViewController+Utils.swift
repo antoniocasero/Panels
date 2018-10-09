@@ -22,12 +22,12 @@ internal extension UIViewController {
     }
 }
 internal extension UIViewController {
-    func addContainer(container: UIViewController){
+    func addContainer(container: UIViewController) {
         self.addChild(container)
         self.view.addSubview(container.view)
         container.didMove(toParent: self)
     }
-    func removeContainer(){
+    func removeContainer() {
         self.willMove(toParent: nil)
         self.removeFromParent()
         self.view.removeFromSuperview()

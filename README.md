@@ -53,7 +53,7 @@ class YourViewController: UIViewController {
         let panelConfiguration = PanelConfiguration(size: .oneThird)
         
         // To present the panel
-        panelManager.show(panel: self.panel, config: panelConfiguration)
+        panelManager.show(panel: panel, config: panelConfiguration)
         ....
         // To dismiss the panel
         panelManager.dismiss()

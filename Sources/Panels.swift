@@ -68,7 +68,7 @@ public class Panels {
         container.endEditing(true)
     }
 
-    public func dismiss(completion: (()->Void)? = nil) {
+    public func dismiss(completion: (() -> Void)? = nil) {
         movePanel(value: 0, completion: {
             self.panel?.removeContainer()
             completion?()
@@ -83,7 +83,7 @@ public class Panels {
 // MARK: Private functions
 
 extension Panels {
-    private func movePanel(value: CGFloat, keyboard: Bool = false, completion: (()->Void)? = nil) {
+    private func movePanel(value: CGFloat, keyboard: Bool = false, completion: (() -> Void)? = nil) {
         panelHeightConstraint!.constant = value
         if !keyboard {
             panel?.headerHeight.constant += isExpanded ? -(UIApplication.safeAreaBottom()) : UIApplication.safeAreaBottom()
