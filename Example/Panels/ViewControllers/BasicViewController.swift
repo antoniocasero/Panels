@@ -15,6 +15,6 @@ class BasicViewController: UIViewController {
         super.viewDidLoad()
         let panel = UIStoryboard.instantiatePanel(identifier: "PanelOptions")
         let panelConfiguration = PanelConfiguration(size: .oneThird)
-        panelManager.show(panel: self.panel, config: panelConfiguration)
+        panelManager.show(panel: panel, config: panelConfiguration)
     }
 }
