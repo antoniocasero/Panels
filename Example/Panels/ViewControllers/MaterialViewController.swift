@@ -19,8 +19,9 @@ class MaterialViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.panelManager.show(panel: panel, config: panelConfiguration)
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.panelManager.dismiss()
-        }
+    }
+
+    @IBAction func closePanel(_ sender: Any) {
+        self.panelManager.dismiss()
     }
 }

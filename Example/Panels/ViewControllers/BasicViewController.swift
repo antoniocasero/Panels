@@ -14,7 +14,7 @@ class BasicViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let panel = UIStoryboard.instantiatePanel(identifier: "PanelOptions")
-        let panelConfiguration = PanelConfiguration(size: .oneThird)
+        let panelConfiguration = PanelConfiguration(size: .custom(350))
         panelManager.show(panel: panel, config: panelConfiguration)
     }
 }

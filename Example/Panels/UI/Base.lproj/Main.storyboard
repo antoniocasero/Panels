@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Qm-tp-Y93" userLabel="Card">
-                                <rect key="frame" x="8" y="68" width="359" height="64"/>
+                                <rect key="frame" x="8" y="72" width="359" height="64"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="2iG-DX-4YW">
                                         <rect key="frame" x="16" y="13.5" width="206" height="37.5"/>
@@ -39,9 +39,9 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9c3-Sq-flP">
-                                        <rect key="frame" x="263" y="17" width="80" height="30"/>
+                                        <rect key="frame" x="283" y="17" width="60" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="kcn-l5-6Xt"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="750" constant="60" id="kcn-l5-6Xt"/>
                                         </constraints>
                                         <state key="normal" title="GO">
                                             <color key="titleShadowColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -66,6 +66,7 @@
                                 <constraints>
                                     <constraint firstItem="2iG-DX-4YW" firstAttribute="centerY" secondItem="5Qm-tp-Y93" secondAttribute="centerY" id="NfE-Fg-qVz"/>
                                     <constraint firstAttribute="trailing" secondItem="9c3-Sq-flP" secondAttribute="trailing" constant="16" id="O03-5y-UIu"/>
+                                    <constraint firstItem="9c3-Sq-flP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ScL-kq-J2i" secondAttribute="trailing" constant="1" id="as8-vg-DKI"/>
                                     <constraint firstItem="9c3-Sq-flP" firstAttribute="centerY" secondItem="5Qm-tp-Y93" secondAttribute="centerY" id="ayL-vs-gWF"/>
                                     <constraint firstAttribute="height" constant="64" id="h3m-51-Q6Y"/>
                                     <constraint firstItem="9c3-Sq-flP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5Qm-tp-Y93" secondAttribute="leading" constant="20" symbolic="YES" id="qMu-2e-rGf"/>
@@ -78,7 +79,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Sp-Uw-5eF" userLabel="Card">
-                                <rect key="frame" x="8" y="140" width="359" height="64"/>
+                                <rect key="frame" x="8" y="144" width="359" height="64"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="BqW-Ah-Klu">
                                         <rect key="frame" x="16" y="13.5" width="189" height="37.5"/>
@@ -98,9 +99,9 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jYk-IX-Gj0">
-                                        <rect key="frame" x="263" y="17" width="80" height="30"/>
+                                        <rect key="frame" x="283" y="17" width="60" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="7xe-yH-naW"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="750" constant="60" id="7xe-yH-naW"/>
                                         </constraints>
                                         <state key="normal" title="GO">
                                             <color key="titleShadowColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -123,6 +124,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="jYk-IX-Gj0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ncu-mb-Jiu" secondAttribute="trailing" constant="1" id="ELZ-oG-q6g"/>
                                     <constraint firstAttribute="trailing" secondItem="jYk-IX-Gj0" secondAttribute="trailing" constant="16" id="Ghw-MT-7aK"/>
                                     <constraint firstItem="jYk-IX-Gj0" firstAttribute="centerY" secondItem="1Sp-Uw-5eF" secondAttribute="centerY" id="MWa-Uu-14F"/>
                                     <constraint firstItem="jYk-IX-Gj0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1Sp-Uw-5eF" secondAttribute="leading" constant="20" symbolic="YES" id="NsA-Xp-IdW"/>
@@ -137,7 +139,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MqO-Mg-ef8" userLabel="Card">
-                                <rect key="frame" x="8" y="212" width="359" height="300"/>
+                                <rect key="frame" x="8" y="216" width="359" height="300"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Extras" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qah-vw-nXE">
                                         <rect key="frame" x="16" y="16" width="46" height="20.5"/>
@@ -229,9 +231,9 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OEH-oH-3eW">
-                                        <rect key="frame" x="263" y="262" width="80" height="30"/>
+                                        <rect key="frame" x="283" y="262" width="60" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="0DL-nL-Qzp"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="0DL-nL-Qzp"/>
                                         </constraints>
                                         <state key="normal" title="GO">
                                             <color key="titleShadowColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -266,6 +268,7 @@
                                     <constraint firstItem="iiq-Lv-cCP" firstAttribute="leading" secondItem="MqO-Mg-ef8" secondAttribute="leading" constant="16" id="v4X-iX-Xbk"/>
                                     <constraint firstItem="Qah-vw-nXE" firstAttribute="top" secondItem="MqO-Mg-ef8" secondAttribute="top" constant="16" id="wCB-nc-Ccq"/>
                                     <constraint firstItem="TP4-qv-7gb" firstAttribute="leading" secondItem="MqO-Mg-ef8" secondAttribute="leading" constant="30" id="wWl-Z8-rrr"/>
+                                    <constraint firstItem="OEH-oH-3eW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MqO-Mg-ef8" secondAttribute="leading" constant="20" symbolic="YES" id="wgQ-Bn-8gS"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -278,7 +281,7 @@
                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="5Qm-tp-Y93" firstAttribute="leading" secondItem="MqO-Mg-ef8" secondAttribute="leading" id="Ccl-wa-Gd3"/>
-                            <constraint firstItem="5Qm-tp-Y93" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.3" id="Ejb-u6-gdf"/>
+                            <constraint firstItem="5Qm-tp-Y93" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="H0p-gE-S2p"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1Sp-Uw-5eF" secondAttribute="trailing" constant="8" id="Uj7-xi-sP8"/>
                             <constraint firstItem="MqO-Mg-ef8" firstAttribute="top" secondItem="1Sp-Uw-5eF" secondAttribute="bottom" constant="8" id="ZaP-oW-iEw"/>
                             <constraint firstItem="1Sp-Uw-5eF" firstAttribute="top" secondItem="5Qm-tp-Y93" secondAttribute="bottom" constant="8" id="c43-vM-8Wx"/>
