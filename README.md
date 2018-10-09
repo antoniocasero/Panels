@@ -3,7 +3,7 @@
 </p>
 
 [![Carthage compatible](https://img.shields.io/badge/Carthage-Compatible-brightgreen.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![CocoaPods](https://img.shields.io/badge/pod-v2.0.0-blue.svg)](https://github.com/antoniocasero/Panels)
+[![CocoaPods](https://img.shields.io/badge/pod-v2.0.1-blue.svg)](https://github.com/antoniocasero/Panels)
 
 [![Platform](http://img.shields.io/badge/platform-ios-blue.svg?style=flat
 )](https://developer.apple.com/iphone/index.action)
