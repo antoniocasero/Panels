@@ -84,7 +84,7 @@ public class Panels {
 
 extension Panels {
     private func movePanel(value: CGFloat, keyboard: Bool = false, completion: (() -> Void)? = nil) {
-        panelHeightConstraint!.constant = value
+        panelHeightConstraint?.constant = value
         if !keyboard {
             panel?.headerHeight.constant += isExpanded ? -(UIApplication.safeAreaBottom()) : UIApplication.safeAreaBottom()
         }

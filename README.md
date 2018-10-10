@@ -5,11 +5,8 @@
 [![Build Status](https://travis-ci.org/antoniocasero/Panels.svg?branch=master)](https://travis-ci.org/antoniocasero/Panels)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-Compatible-brightgreen.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods](https://img.shields.io/badge/pod-v2.0.1-blue.svg)](https://github.com/antoniocasero/Panels)
-
-[![Platform](http://img.shields.io/badge/platform-ios-blue.svg?style=flat
-)](https://developer.apple.com/iphone/index.action)
-[![Language](http://img.shields.io/badge/language-swift-brightgreen.svg?style=flat
-)](https://developer.apple.com/swift)
+[![Platform](http://img.shields.io/badge/platform-ios-blue.svg?style=flat)](https://developer.apple.com/iphone/index.action)
+[![Language](http://img.shields.io/badge/language-swift-brightgreen.svg?style=flat)](https://developer.apple.com/swift)
 [![Twitter](https://img.shields.io/badge/twitter-@acaserop-blue.svg?style=flat)](http://twitter.com/acaserop)
 
 
@@ -19,7 +16,7 @@ is presented/dismissed.
 
 Updated to Swift 4.2
 
-<p float="center">
+<p align="center">
     <img src="Resources/Demo1.gif" width="237" height="471" alt="Sliding Panel demo1">
     <img src="Resources/Demo2.gif" width="237" height="471" alt="Sliding Panel demo2">
     <img src="Resources/Demo3.gif" width="237" height="471" alt="Sliding Panel demo3">
@@ -113,4 +110,4 @@ Add the line `github "antoniocasero/Panels"` to your `Cartfile`
 Project created by Antonio Casero ([@acaserop](https://twitter.com/acaserop) on Twitter).
 
 ## Credits
-Sketch UI ([Elements](https://sketchapp.com/elements)
+Sketch UI ([Elements](https://sketchapp.com/elements))
