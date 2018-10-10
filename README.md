@@ -2,6 +2,7 @@
   <img width="420" src="Resources/PanelsLogo.png"/>
 </p>
 
+[![Build Status](https://travis-ci.org/antoniocasero/Panels.svg?branch=master)](https://travis-ci.org/antoniocasero/Panels)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-Compatible-brightgreen.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods](https://img.shields.io/badge/pod-v2.0.1-blue.svg)](https://github.com/antoniocasero/Panels)
 
