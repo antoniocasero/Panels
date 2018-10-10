@@ -14,8 +14,8 @@ public struct PanelConfiguration {
     /// Panel height
     public var panelSize: PanelDimensions
 
-    /// Panel margens between the header and the next views.
-    public var panelMargen: CGFloat
+    /// Panel margins between the header and the next views.
+    public var panelMargin: CGFloat
 
     /// Visible area when the panel is collapsed
     public var panelVisibleArea: CGFloat
@@ -40,10 +40,10 @@ public struct PanelConfiguration {
     public var enclosedNavigationBar = true
 
     public init(size: PanelDimensions = .thirdQuarter,
-                margen: CGFloat = 8.0,
+                margin: CGFloat = 8.0,
                 visibleArea: CGFloat = 64.0) {
         self.panelSize = size
-        self.panelMargen = margen
+        self.panelMargin = margin
         self.panelVisibleArea = visibleArea
     }
 
@@ -54,7 +54,7 @@ public struct PanelConfiguration {
     }
 
     internal func visibleArea() -> CGFloat {
-        let visible = self.panelVisibleArea + UIApplication.safeAreaBottom() + (2 * panelMargen)
+        let visible = self.panelVisibleArea + UIApplication.safeAreaBottom() + (2 * panelMargin)
         return visible
     }
 }
