@@ -44,8 +44,8 @@ public enum PanelDimensions: Equatable {
         case let (.custom(a), .custom(b)):
             return a == b
         case (.fullScreen, .fullScreen): fallthrough
-        case (.half, .half): fallthrough
         case (.thirdQuarter, .thirdQuarter): fallthrough
+        case (.half, .half): fallthrough
         case (.oneThird, .oneThird):
              return true
         default:
