@@ -74,7 +74,7 @@ You can find extra options in the `PanelConfiguration` object:
     public var panelSize: PanelDimensions
 
     /// Panel margins between the header and the next views.
-    public var panelMargen: CGFloat
+    public var panelMargin: CGFloat
 
     /// Visible area when the panel is collapsed
     public var panelVisibleArea: CGFloat

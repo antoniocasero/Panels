@@ -46,7 +46,7 @@ class PanelTests: XCTestCase {
         let config = PanelConfiguration()
         XCTAssertNotNil(config)
         XCTAssertEqual(config.panelSize, .thirdQuarter)
-        XCTAssertEqual(config.panelMargen, 8)
+        XCTAssertEqual(config.panelMargin, 8)
         XCTAssertTrue(config.useSafeArea)
     }
     func testPanelSizeWithoutNavBar() {
