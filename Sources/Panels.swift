@@ -15,7 +15,7 @@ public class Panels {
     private weak var parentViewController: UIViewController?
     private weak var containerView: UIView?
     private weak var panelHeightConstraint: NSLayoutConstraint?
-    private var configuration: PanelConfiguration!
+    private var configuration: PanelConfiguration = PanelConfiguration()
 
     public init(target: UIViewController) {
         self.parentViewController = target
@@ -89,7 +89,7 @@ extension Panels {
             panel?.headerHeight.constant += isExpanded ? -(UIApplication.safeAreaBottom()) : UIApplication.safeAreaBottom()
         }
         isExpanded ? self.delegate?.panelDidOpen() : self.delegate?.panelDidCollapse()
-        containerView?.animateLayoutBounce(completion: completion)
+        containerView?.animateLayoutBounce(completion: completion) ?? completion?()
     }
 
     private func addChildToContainer(parent container: UIView,
