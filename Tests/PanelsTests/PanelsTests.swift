@@ -95,7 +95,17 @@ class PanelTests: XCTestCase {
     
     func testPanelManagerDismissWithoutPanel() {
         let panelManager = Panels(target: parent)
-        let expDismiss = expectation(description: "Panel should be dismissed")
+        let config = PanelConfiguration(size: .half, visibleArea: 20)
+        panelManager.show(panel: panel, config: config)
+        XCTAssertEqual(parent.view.subviews.count, 1)
+        XCTAssertFalse(panelManager.isExpanded)
+        var expDismiss = expectation(description: "Panel should be dismissed")
+        panelManager.dismiss(completion: {
+            XCTAssertEqual(self.parent.view.subviews.count, 0)
+            expDismiss.fulfill()
+        })
+        waitForExpectations(timeout: 10)
+        expDismiss = expectation(description: "Dismiss should just be ignored")
         panelManager.dismiss(completion: {
             XCTAssertEqual(self.parent.view.subviews.count, 0)
             expDismiss.fulfill()
