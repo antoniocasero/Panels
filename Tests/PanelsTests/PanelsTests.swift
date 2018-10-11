@@ -83,7 +83,6 @@ class PanelTests: XCTestCase {
             expDismiss.fulfill()
         })
         waitForExpectations(timeout: 10)
-        panelManager.dismiss()
     }
 
     func testCustomDimensions() {
@@ -92,5 +91,15 @@ class PanelTests: XCTestCase {
         let d3: PanelDimensions = .custom(38.9)
         XCTAssertEqual(d1, d2)
         XCTAssertNotEqual(d1, d3)
+    }
+    
+    func testPanelManagerDismissWithoutPanel() {
+        let panelManager = Panels(target: parent)
+        let expDismiss = expectation(description: "Panel should be dismissed")
+        panelManager.dismiss(completion: {
+            XCTAssertEqual(self.parent.view.subviews.count, 0)
+            expDismiss.fulfill()
+        })
+        waitForExpectations(timeout: 10)
     }
 }
