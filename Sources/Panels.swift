@@ -15,7 +15,7 @@ public class Panels {
     private weak var parentViewController: UIViewController?
     private weak var containerView: UIView?
     private weak var panelHeightConstraint: NSLayoutConstraint?
-    private var configuration: PanelConfiguration = PanelConfiguration()
+    private lazy var configuration: PanelConfiguration = PanelConfiguration()
 
     public init(target: UIViewController) {
         self.parentViewController = target
@@ -53,7 +53,7 @@ public class Panels {
 
     /// Opens the panel
     @objc public func expandPanel() {
-        guard isExpanded != true, let container = containerView else {
+        guard !isExpanded, let container = containerView else {
             return
         }
         movePanel(value: configuration.size(for: container))
@@ -61,7 +61,7 @@ public class Panels {
 
     /// Close the panel
     @objc public func collapsePanel() {
-        guard isExpanded != false, let container = containerView else {
+        guard isExpanded, let container = containerView else {
             return
         }
         movePanel(value: configuration.visibleArea())
