@@ -8,7 +8,7 @@
 
 import UIKit
 
-// Protocol to be conformed by the views presented as Panels.
+/// Protocol to be conformed by the views presented as Panels.
 public protocol Panelable: class {
 
     /// Constraint that controls the header panel height

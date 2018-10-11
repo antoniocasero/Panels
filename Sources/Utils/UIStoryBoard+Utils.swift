@@ -16,7 +16,7 @@ public extension UIStoryboard {
     /// - Returns: The intial VC from the Storyboard that conforms Panelable
     class func instantiatePanel(identifier: String) -> Panelable & UIViewController {
         guard let panel = UIStoryboard(name: identifier, bundle: nil).instantiateInitialViewController() as? Panelable & UIViewController else {
-            fatalError("Try to instanciate something that does not conform Panelable :(")
+            fatalError("Trying to instantiate something that does not conform Panelable :(")
         }
         return panel
     }
