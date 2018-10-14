@@ -98,6 +98,12 @@ You can find extra options in the `PanelConfiguration` object:
     public var enclosedNavigationBar = true
 ```
 
+The perfect companion for `Panels` is [Arrows](https://github.com/antoniocasero/Arrows), take a look!
+
+<p align="center">
+    <img src="Resources/ArrowExample.gif" width="237" height="471" alt="Arrows Example">
+</p>
+
 
 ## Installation
 
