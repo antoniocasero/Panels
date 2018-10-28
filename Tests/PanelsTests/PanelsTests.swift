@@ -92,7 +92,7 @@ class PanelTests: XCTestCase {
         XCTAssertEqual(d1, d2)
         XCTAssertNotEqual(d1, d3)
     }
-    
+
     func testPanelManagerDismissWithoutPanel() {
         let panelManager = Panels(target: parent)
         let expDismiss = expectation(description: "Panel should be dismissed")

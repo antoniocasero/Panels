@@ -77,7 +77,7 @@ internal extension UIApplication {
         }
         return bottomPadding
     }
-    
+
     internal class func safeAreaTop() -> CGFloat {
         let window = UIApplication.shared.keyWindow ?? UIApplication.shared.windows.first
         let bottomPadding: CGFloat

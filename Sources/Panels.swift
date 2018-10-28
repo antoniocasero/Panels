@@ -81,10 +81,9 @@ public class Panels {
             panelView.frame.origin = CGPoint(x: 0, y: self.containerView!.frame.size.height)
         }) { _ in
             self.panel?.removeContainer()
+            self.panel = nil
             completion?()
         }
-        self.panel = nil
-
     }
 
     deinit {
