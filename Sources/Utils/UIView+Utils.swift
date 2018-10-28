@@ -89,3 +89,13 @@ internal extension UIApplication {
         return bottomPadding
     }
 }
+
+extension Optional {
+    func then<T>(_ action: (Wrapped) throws -> T?) rethrows -> T? {
+        guard let unwrapped = self else { return nil }
+        return try action(unwrapped)
+    }
+    func `do`(_ some: () throws -> Void) rethrows {
+        if self != nil { try some() }
+    }
+}

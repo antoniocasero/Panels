@@ -16,6 +16,7 @@ public class Panels {
     private weak var containerView: UIView?
     private weak var panelHeightConstraint: NSLayoutConstraint?
     private lazy var configuration: PanelConfiguration = PanelConfiguration()
+    private var panelHeight: CGFloat = 0.0
 
     public init(target: UIViewController) {
         self.parentViewController = target
@@ -31,6 +32,7 @@ public class Panels {
                      config: PanelConfiguration = PanelConfiguration(),
                      view: UIView? = nil) {
 
+        assert(self.panel == nil, "You are trying to push a panel without dismiss the previous one.")
         self.configuration = config
         self.containerView = view ?? parentViewController?.view
         self.panel = panel
@@ -47,7 +49,8 @@ public class Panels {
         panel.hideKeyboardAutomatically()
         registerKeyboardNotifications()
         //Prepare the view placement, saving the safeArea.
-        self.panel?.headerHeight.constant += UIApplication.safeAreaBottom()
+        panelHeight = config.heightConstant ?? panel.headerHeight.constant
+        panel.headerHeight.constant = panelHeight + UIApplication.safeAreaTop()
         setupGestures(headerView: panel.headerPanel, superview: container)
     }
 
@@ -69,10 +72,19 @@ public class Panels {
     }
 
     public func dismiss(completion: (() -> Void)? = nil) {
-        movePanel(value: 0, completion: {
+        self.panel?.headerHeight.constant = panelHeight
+        guard let panelView = self.panel?.view else {
+            return
+        }
+
+        UIView.animate(withDuration: configuration.dismissAnimationDuration, animations: {
+            panelView.frame.origin = CGPoint(x: 0, y: self.containerView!.frame.size.height)
+        }) { _ in
             self.panel?.removeContainer()
             completion?()
-        })
+        }
+        self.panel = nil
+
     }
 
     deinit {
@@ -97,7 +109,6 @@ extension Panels {
                                      visible: CGFloat,
                                      size: CGFloat) -> NSLayoutConstraint {
         childView.translatesAutoresizingMaskIntoConstraints = false
-        //Bottom
         childView.frame = CGRect(x: 0, y: container.bounds.maxY + configuration.visibleArea(), width: container.bounds.width, height: configuration.visibleArea())
         let views = ["childView": childView]
         let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|[childView]|",
@@ -113,7 +124,7 @@ extension Panels {
                                                            constant: visible)
         constraint.isActive = true
         if self.configuration.animateEntry {
-            childView.animateLayoutBounce(duration: 1)
+            childView.animateLayoutBounce(duration: self.configuration.entryAnimationDuration)
         } else {
             childView.layoutIfNeeded()
         }
@@ -139,8 +150,8 @@ extension Panels {
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             let keyboardRectangle = keyboardFrame.cgRectValue
             let keyboardHeight = CGFloat(keyboardRectangle.height)
-            if let container = containerView {
-                let currentValue = (isExpanded) ? configuration.size(for: container) : configuration.visibleArea()
+            containerView.then {
+                let currentValue = (isExpanded) ? configuration.size(for: $0) : configuration.visibleArea()
                 movePanel(value: currentValue + keyboardHeight, keyboard: true)
             }
         }

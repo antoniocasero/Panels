@@ -39,6 +39,15 @@ public struct PanelConfiguration {
     /// calculation when the panelSize is .fullScreen
     public var enclosedNavigationBar = true
 
+    /// This value sets defines the height constraint
+    public var heightConstant: CGFloat?
+
+    // Animation duration when the panel is presented
+    public var entryAnimationDuration: Double = 1.0
+
+    // Animation duration when the panel is dimissed
+    public var dismissAnimationDuration: Double = 0.3
+
     public init(size: PanelDimensions = .thirdQuarter,
                 margin: CGFloat = 8.0,
                 visibleArea: CGFloat = 64.0) {
