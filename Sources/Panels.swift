@@ -74,9 +74,10 @@ public class Panels {
     public func dismiss(completion: (() -> Void)? = nil) {
         self.panel?.headerHeight.constant = panelHeight
         guard let panelView = self.panel?.view else {
+            completion?()
             return
         }
-
+        
         UIView.animate(withDuration: configuration.dismissAnimationDuration, animations: {
             panelView.frame.origin = CGPoint(x: 0, y: self.containerView!.frame.size.height)
         }) { _ in

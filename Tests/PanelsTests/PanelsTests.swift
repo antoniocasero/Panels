@@ -95,11 +95,13 @@ class PanelTests: XCTestCase {
 
     func testPanelManagerDismissWithoutPanel() {
         let panelManager = Panels(target: parent)
+        panelManager.show(panel: panel)
         let expDismiss = expectation(description: "Panel should be dismissed")
         panelManager.dismiss(completion: {
-            XCTAssertEqual(self.parent.view.subviews.count, 0)
             expDismiss.fulfill()
         })
         waitForExpectations(timeout: 10)
+        XCTAssertEqual(self.parent.view.subviews.count, 0)
+
     }
 }
