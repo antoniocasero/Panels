@@ -1,3 +1,5 @@
+platform :ios, '11.2'
+
 use_frameworks!
 
 target 'Panels_Example' do
