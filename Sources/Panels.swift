@@ -108,7 +108,10 @@ extension Panels {
                                      visible: CGFloat,
                                      size: CGFloat) -> NSLayoutConstraint {
         childView.translatesAutoresizingMaskIntoConstraints = false
-        childView.frame = CGRect(x: 0, y: container.bounds.maxY + configuration.visibleArea(), width: container.bounds.width, height: configuration.visibleArea())
+        childView.frame = CGRect(x: 0,
+                                 y: container.bounds.maxY + configuration.visibleArea(),
+                                 width: container.bounds.width,
+                                 height: configuration.visibleArea())
         let views = ["childView": childView]
         let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|[childView]|",
                                                                    options: NSLayoutConstraint.FormatOptions(rawValue: 0),
@@ -116,7 +119,9 @@ extension Panels {
                                                                    views: views)
         container.addConstraints(horizontalConstraints)
         let heightConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:[childView(==\(size))]",
-                                                               options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: views)
+                                                               options: NSLayoutConstraint.FormatOptions(rawValue: 0),
+                                                               metrics: nil,
+                                                               views: views)
 
         container.addConstraints(heightConstraints)
         let constraint = container.bottomAnchor.constraint(equalTo: childView.topAnchor,
@@ -136,14 +141,16 @@ extension Panels {
 
 extension Panels {
     private func registerKeyboardNotifications() {
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillShow(notification:)),
-                                               name: UIResponder.keyboardWillShowNotification,
-                                               object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillHide(notification:)),
-                                               name: UIResponder.keyboardWillHideNotification,
-                                               object: nil)
+        if configuration.keyboardObserver {
+            NotificationCenter.default.addObserver(self,
+                                                   selector: #selector(keyboardWillShow(notification:)),
+                                                   name: UIResponder.keyboardWillShowNotification,
+                                                   object: nil)
+            NotificationCenter.default.addObserver(self,
+                                                   selector: #selector(keyboardWillHide(notification:)),
+                                                   name: UIResponder.keyboardWillHideNotification,
+                                                   object: nil)
+        }
     }
 
     @objc private func keyboardWillShow(notification: Notification) {

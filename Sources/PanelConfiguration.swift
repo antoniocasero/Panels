@@ -46,6 +46,9 @@ public struct PanelConfiguration {
 
     // Animation duration when the panel is dimissed
     public var dismissAnimationDuration: Double = 0.3
+    
+    /// Observe keyboard events
+    public var keyboardObserver = true
 
     public init(size: PanelDimensions = .thirdQuarter,
                 margin: CGFloat = 8.0,
@@ -57,12 +60,13 @@ public struct PanelConfiguration {
 
     internal func size(for view: UIView) -> CGFloat {
         let delta: CGFloat = (panelSize == .fullScreen) ? 0 : 2
-        let size = useSafeArea ? panelSize.translate(for: view, navController: enclosedNavigationBar) + (UIApplication.safeAreaBottom() * delta) : panelSize.translate(for: view, navController: enclosedNavigationBar)
+        let screenSize = panelSize.translate(for: view, navController: enclosedNavigationBar)
+        let size = useSafeArea ? screenSize + (UIApplication.safeAreaBottom() * delta) : screenSize
         return size
     }
 
     internal func visibleArea() -> CGFloat {
-        let visible = panelVisibleArea + UIApplication.safeAreaBottom() + (2 * panelMargin)
+        let visible = panelVisibleArea + UIApplication.safeAreaBottom() + panelMargin
         return visible
     }
 }
