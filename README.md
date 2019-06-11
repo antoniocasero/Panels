@@ -15,7 +15,7 @@ Panels is a framework to easily add sliding panels to your application.
 It takes care of the safe area in new devices and moving your panel when the keyboard
 is presented/dismissed.
 
-Updated to Swift 4.2
+Updated to Swift 5
 
 <p align="center">
     <img src="Resources/Demo1.gif" width="237" height="471" alt="Sliding Panel demo1">
