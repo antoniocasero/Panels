@@ -6,8 +6,8 @@
 //  Copyright © 2018 Antonio Casero. All rights reserved.
 //
 
-import UIKit
 import Panels
+import UIKit
 
 class MaterialViewController: UIViewController {
     lazy var panelManager = Panels(target: self)
@@ -21,7 +21,7 @@ class MaterialViewController: UIViewController {
         }
     }
 
-    @IBAction func closePanel(_ sender: Any) {
-        self.panelManager.dismiss()
+    @IBAction func closePanel(_: Any) {
+        panelManager.dismiss()
     }
 }

@@ -6,11 +6,10 @@
 //  Copyright © 2018 Panels. All rights reserved.
 //
 
-import XCTest
 @testable import Panels
+import XCTest
 
 class PanelTests: XCTestCase {
-
     class TestPanel: UIViewController, Panelable {
         var headerHeight: NSLayoutConstraint! = NSLayoutConstraint()
         var headerPanel: UIView! = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: 80))
@@ -49,6 +48,7 @@ class PanelTests: XCTestCase {
         XCTAssertEqual(config.panelMargin, 8)
         XCTAssertTrue(config.useSafeArea)
     }
+
     func testPanelSizeWithoutNavBar() {
         let dimensions: PanelDimensions = .half
         let expectedDimension = dimensions.translate(for: panel.view, navController: false)
@@ -101,7 +101,6 @@ class PanelTests: XCTestCase {
             expDismiss.fulfill()
         })
         waitForExpectations(timeout: 10)
-        XCTAssertEqual(self.parent.view.subviews.count, 0)
-
+        XCTAssertEqual(parent.view.subviews.count, 0)
     }
 }

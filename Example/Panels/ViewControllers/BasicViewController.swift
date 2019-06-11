@@ -6,8 +6,8 @@
 //  Copyright © 2018 Antonio Casero. All rights reserved.
 //
 
-import UIKit
 import Panels
+import UIKit
 
 class BasicViewController: UIViewController {
     lazy var panelManager = Panels(target: self)

@@ -8,20 +8,20 @@
 import UIKit
 
 @IBDesignable extension UIView {
-    @IBInspectable var borderColor:UIColor? {
+    @IBInspectable var borderColor: UIColor? {
         set {
             layer.borderColor = newValue!.cgColor
         }
         get {
             if let color = layer.borderColor {
                 return UIColor(cgColor: color)
-            }
-            else {
+            } else {
                 return nil
             }
         }
     }
-    @IBInspectable var borderWidth:CGFloat {
+
+    @IBInspectable var borderWidth: CGFloat {
         set {
             layer.borderWidth = newValue
         }
@@ -29,7 +29,8 @@ import UIKit
             return layer.borderWidth
         }
     }
-    @IBInspectable var cornerRadius:CGFloat {
+
+    @IBInspectable var cornerRadius: CGFloat {
         set {
             layer.cornerRadius = newValue
             clipsToBounds = newValue > 0
@@ -40,15 +41,14 @@ import UIKit
     }
 
     func addBlurBackground() {
-        self.backgroundColor = .clear
+        backgroundColor = .clear
         let blurEffect = UIBlurEffect(style: .dark)
         let blurView = UIVisualEffectView(effect: blurEffect)
         blurView.translatesAutoresizingMaskIntoConstraints = false
-        self.insertSubview(blurView, at: 0)
+        insertSubview(blurView, at: 0)
         NSLayoutConstraint.activate([
             blurView.heightAnchor.constraint(equalTo: self.heightAnchor),
             blurView.widthAnchor.constraint(equalTo: self.widthAnchor),
-            ])
-
+        ])
     }
 }

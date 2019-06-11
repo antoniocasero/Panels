@@ -9,8 +9,7 @@
 import UIKit
 
 /// Protocol to be conformed by the views presented as Panels.
-public protocol Panelable: class {
-
+public protocol Panelable: AnyObject {
     /// Constraint that controls the header panel height
     var headerHeight: NSLayoutConstraint! { get set }
 
@@ -20,8 +19,7 @@ public protocol Panelable: class {
 
 /// Protocol to get panel notifications. This protocol is optional. Useful when you want to concat
 /// actions when the panel moves.
-public protocol PanelNotifications: class {
-
+public protocol PanelNotifications: AnyObject {
     /// Notification when the panel is added to the container
     func panelDidPresented()
 

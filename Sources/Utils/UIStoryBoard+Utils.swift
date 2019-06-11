@@ -9,7 +9,6 @@
 import UIKit
 
 public extension UIStoryboard {
-
     /// Helper method to initialize a panel using Storyboards
     ///
     /// - Parameter identifier: Name of the storyboard

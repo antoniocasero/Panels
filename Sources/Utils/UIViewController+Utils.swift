@@ -9,30 +9,28 @@
 import UIKit
 
 internal extension UIViewController {
-
-    internal func hideKeyboardAutomatically() {
+    func hideKeyboardAutomatically() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self,
                                                                  action: #selector(UIViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
 
-    @objc internal func dismissKeyboard() {
+    @objc func dismissKeyboard() {
         view.endEditing(true)
     }
 }
 
 internal extension UIViewController {
-
     func addContainer(container: UIViewController) {
-        self.addChild(container)
-        self.view.addSubview(container.view)
+        addChild(container)
+        view.addSubview(container.view)
         container.didMove(toParent: self)
     }
 
     func removeContainer() {
-        self.willMove(toParent: nil)
-        self.removeFromParent()
-        self.view.removeFromSuperview()
+        willMove(toParent: nil)
+        removeFromParent()
+        view.removeFromSuperview()
     }
 }

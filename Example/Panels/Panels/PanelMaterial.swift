@@ -6,17 +6,17 @@
 //  Copyright © 2018 Antonio Casero. All rights reserved.
 //
 
-import UIKit
 import Panels
+import UIKit
 
 class PanelMaterial: UIViewController, Panelable {
     @IBOutlet var headerHeight: NSLayoutConstraint!
     @IBOutlet var headerPanel: UIView!
 
     override func viewDidLoad() {
-        self.view.addBlurBackground()
+        view.addBlurBackground()
         curveTopCorners()
-        self.view.layoutIfNeeded()
+        view.layoutIfNeeded()
         super.viewDidLoad()
     }
 }

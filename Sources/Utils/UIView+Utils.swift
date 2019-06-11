@@ -13,7 +13,7 @@ internal extension UIView {
         guard let superview = self.superview else {
             return
         }
-        self.translatesAutoresizingMaskIntoConstraints = false
+        translatesAutoresizingMaskIntoConstraints = false
         addSuperviewConstraint(constraint: topAnchor.constraint(equalTo: superview.topAnchor))
         addSuperviewConstraint(constraint: leftAnchor.constraint(equalTo: superview.leftAnchor))
         addSuperviewConstraint(constraint: bottomAnchor.constraint(equalTo: superview.bottomAnchor))
@@ -31,15 +31,14 @@ internal extension UIView {
                        initialSpringVelocity: 0,
                        options: .curveEaseOut,
                        animations: {
-                        self.layoutIfNeeded()
-        }, completion: { _ in
-            completion?()
+                           self.layoutIfNeeded()
+                       }, completion: { _ in
+                           completion?()
         })
     }
 
     // retrieves all constraints that mention the view
     func getAllConstraints() -> [NSLayoutConstraint] {
-
         // array will contain self and all superviews
         var views = [self]
 
@@ -52,22 +51,22 @@ internal extension UIView {
 
         // transform views to constraints and filter only those
         // constraints that include the view itself
-        return views.flatMap({ $0.constraints }).filter { constraint in
-            return constraint.firstItem as? UIView == self ||
+        return views.flatMap { $0.constraints }.filter { constraint in
+            constraint.firstItem as? UIView == self ||
                 constraint.secondItem as? UIView == self
         }
     }
 
     func getHeightConstraint() -> NSLayoutConstraint? {
-        return getAllConstraints().filter({
+        return getAllConstraints().filter {
             ($0.firstAttribute == .height && $0.firstItem as? UIView == self) ||
                 ($0.secondAttribute == .height && $0.secondItem as? UIView == self)
-        }).first
+        }.first
     }
 }
 
 internal extension UIApplication {
-    internal class func safeAreaBottom() -> CGFloat {
+    class func safeAreaBottom() -> CGFloat {
         let window = UIApplication.shared.keyWindow ?? UIApplication.shared.windows.first
         let bottomPadding: CGFloat
         if #available(iOS 11.0, *) {
@@ -78,7 +77,7 @@ internal extension UIApplication {
         return bottomPadding
     }
 
-    internal class func safeAreaTop() -> CGFloat {
+    class func safeAreaTop() -> CGFloat {
         let window = UIApplication.shared.keyWindow ?? UIApplication.shared.windows.first
         let bottomPadding: CGFloat
         if #available(iOS 11.0, *) {
@@ -95,6 +94,7 @@ extension Optional {
         guard let unwrapped = self else { return nil }
         return try action(unwrapped)
     }
+
     func `do`(_ some: () throws -> Void) rethrows {
         if self != nil { try some() }
     }

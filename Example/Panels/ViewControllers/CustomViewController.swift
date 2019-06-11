@@ -6,8 +6,8 @@
 //  Copyright © 2018 Antonio Casero. All rights reserved.
 //
 
-import UIKit
 import Panels
+import UIKit
 class CustomViewController: UIViewController {
     lazy var panelManager = Panels(target: self)
     lazy var panel = UIStoryboard.instantiatePanel(identifier: "PanelDetails")
@@ -27,13 +27,11 @@ extension CustomViewController: PanelNotifications {
 
     func panelDidCollapse() {
         print("Panel did collapse")
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
-
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
 
     func panelDidOpen() {
         print("Panel did open")
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
-
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
 }

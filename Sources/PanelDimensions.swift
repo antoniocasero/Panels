@@ -12,7 +12,7 @@ import UIKit
 /// - oneThird: Expanded panel will fill one third of the container view.
 /// - half: Expanded panel will fill half of the container view.
 /// - thirdQuarter: Expanded panel will fill 3/4 of the container view.
-/// - custom: Absolute size. 
+/// - custom: Absolute size.
 
 public enum PanelDimensions: Equatable {
     case oneThird
@@ -24,17 +24,17 @@ public enum PanelDimensions: Equatable {
     func translate(for view: UIView, navController: Bool) -> CGFloat {
         switch self {
         case .oneThird:
-            return view.bounds.height/CGFloat(3)
+            return view.bounds.height / CGFloat(3)
         case .half:
-            return view.bounds.height/CGFloat(2)
+            return view.bounds.height / CGFloat(2)
         case .thirdQuarter:
-            return view.bounds.height/CGFloat(1.5)
+            return view.bounds.height / CGFloat(1.5)
         case .fullScreen:
             let fullScreen = view.bounds.height
             let safeTop = UIApplication.safeAreaTop()
-            let navBar: CGFloat = (navController) ? 44 : 0
+            let navBar: CGFloat = navController ? 44 : 0
             return fullScreen - safeTop - navBar
-        case .custom(let customSize):
+        case let .custom(customSize):
             return (customSize > view.bounds.height) ? view.bounds.width : customSize
         }
     }
@@ -47,7 +47,7 @@ public enum PanelDimensions: Equatable {
         case (.thirdQuarter, .thirdQuarter): fallthrough
         case (.half, .half): fallthrough
         case (.oneThird, .oneThird):
-             return true
+            return true
         default:
             return false
         }

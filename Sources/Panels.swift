@@ -19,7 +19,7 @@ public class Panels {
     private var panelHeight: CGFloat = 0.0
 
     public init(target: UIViewController) {
-        self.parentViewController = target
+        parentViewController = target
     }
 
     /// Add a viewcontainer to the view target. This subview is the panel definded in
@@ -31,24 +31,23 @@ public class Panels {
     public func show(panel: Panelable & UIViewController,
                      config: PanelConfiguration = PanelConfiguration(),
                      view: UIView? = nil) {
-
         assert(self.panel == nil, "You are trying to push a panel without dismiss the previous one.")
-        self.configuration = config
-        self.containerView = view ?? parentViewController?.view
+        configuration = config
+        containerView = view ?? parentViewController?.view
         self.panel = panel
-        self.parentViewController?.addContainer(container: panel)
+        parentViewController?.addContainer(container: panel)
         guard let container = containerView else {
             fatalError("No parent view available")
         }
 
-        panelHeightConstraint = self.addChildToContainer(parent: container,
-                                                         child: panel.view,
-                                                         visible: config.visibleArea(),
-                                                         size: config.size(for: container))
+        panelHeightConstraint = addChildToContainer(parent: container,
+                                                    child: panel.view,
+                                                    visible: config.visibleArea(),
+                                                    size: config.size(for: container))
 
         panel.hideKeyboardAutomatically()
         registerKeyboardNotifications()
-        //Prepare the view placement, saving the safeArea.
+        // Prepare the view placement, saving the safeArea.
         panelHeight = config.heightConstant ?? panel.headerHeight.constant
         panel.headerHeight.constant = panelHeight + UIApplication.safeAreaTop()
         setupGestures(headerView: panel.headerPanel, superview: container)
@@ -72,12 +71,12 @@ public class Panels {
     }
 
     public func dismiss(completion: (() -> Void)? = nil) {
-        self.panel?.headerHeight.constant = panelHeight
+        panel?.headerHeight.constant = panelHeight
         guard let panelView = self.panel?.view else {
             completion?()
             return
         }
-        
+
         UIView.animate(withDuration: configuration.dismissAnimationDuration, animations: {
             panelView.frame.origin = CGPoint(x: 0, y: self.containerView!.frame.size.height)
         }) { _ in
@@ -98,9 +97,9 @@ extension Panels {
     private func movePanel(value: CGFloat, keyboard: Bool = false, completion: (() -> Void)? = nil) {
         panelHeightConstraint?.constant = value
         if !keyboard {
-            panel?.headerHeight.constant += isExpanded ? -(UIApplication.safeAreaBottom()) : UIApplication.safeAreaBottom()
+            panel?.headerHeight.constant += isExpanded ? -UIApplication.safeAreaBottom() : UIApplication.safeAreaBottom()
         }
-        isExpanded ? self.delegate?.panelDidOpen() : self.delegate?.panelDidCollapse()
+        isExpanded ? delegate?.panelDidOpen() : delegate?.panelDidCollapse()
         containerView?.animateLayoutBounce(completion: completion) ?? completion?()
     }
 
@@ -117,23 +116,24 @@ extension Panels {
                                                                    views: views)
         container.addConstraints(horizontalConstraints)
         let heightConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:[childView(==\(size))]",
-            options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: views)
+                                                               options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: views)
 
         container.addConstraints(heightConstraints)
         let constraint = container.bottomAnchor.constraint(equalTo: childView.topAnchor,
                                                            constant: visible)
         constraint.isActive = true
-        if self.configuration.animateEntry {
-            childView.animateLayoutBounce(duration: self.configuration.entryAnimationDuration)
+        if configuration.animateEntry {
+            childView.animateLayoutBounce(duration: configuration.entryAnimationDuration)
         } else {
             childView.layoutIfNeeded()
         }
-        self.delegate?.panelDidPresented()
+        delegate?.panelDidPresented()
         return constraint
     }
 }
 
 // MARK: Keyboard control
+
 extension Panels {
     private func registerKeyboardNotifications() {
         NotificationCenter.default.addObserver(self,
@@ -151,27 +151,28 @@ extension Panels {
             let keyboardRectangle = keyboardFrame.cgRectValue
             let keyboardHeight = CGFloat(keyboardRectangle.height)
             containerView.then {
-                let currentValue = (isExpanded) ? configuration.size(for: $0) : configuration.visibleArea()
+                let currentValue = isExpanded ? configuration.size(for: $0) : configuration.visibleArea()
                 movePanel(value: currentValue + keyboardHeight, keyboard: true)
             }
         }
     }
 
-    @objc private func keyboardWillHide(notification: Notification) {
+    @objc private func keyboardWillHide(notification _: Notification) {
         collapsePanel()
     }
 }
 
 // MARK: Gesture control
+
 extension Panels {
-    private func setupGestures(headerView: UIView, superview: UIView) {
+    private func setupGestures(headerView: UIView, superview _: UIView) {
         // Expand and collapse:
-        if self.configuration.respondToTap {
+        if configuration.respondToTap {
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
             headerView.addGestureRecognizer(tapGesture)
         }
 
-        if self.configuration.respondToDrag {
+        if configuration.respondToDrag {
             let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(expandPanel))
             swipeUp.direction = .up
             headerView.addGestureRecognizer(swipeUp)
@@ -180,7 +181,7 @@ extension Panels {
             headerView.addGestureRecognizer(swipeDown)
         }
 
-        if self.configuration.closeOutsideTap {
+        if configuration.closeOutsideTap {
             let tapGestureOutside = UITapGestureRecognizer(target: self, action: #selector(collapsePanel))
             tapGestureOutside.cancelsTouchesInView = false
             containerView?.addGestureRecognizer(tapGestureOutside)
