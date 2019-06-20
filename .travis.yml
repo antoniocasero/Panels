@@ -1,5 +1,5 @@
 osx_image: xcode10
 language: swift
-xcode_project: Panels.xcodeproj 
+xcode_project: Panels.xcodeproj
 xcode_scheme: Panels-iOS
 xcode_destination: platform=iOS Simulator,OS=12.0,name=iPhone X

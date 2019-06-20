@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Panels"
-  s.version      = "2.0.3"
+  s.version      = "2.1.0"
   s.summary      = "Simple sliding panels"
   s.description  = <<-DESC
     Add easly sliding panels to your app. Focus on the UI, let ´Panels´ do the rest.
@@ -13,5 +13,5 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/antoniocasero/Panels.git", :tag => s.version.to_s }
   s.source_files  = "Sources/**/*"
   s.frameworks  = "UIKit"
-  s.swift_version = '4.2'
+  s.swift_version = '5.0'
 end

@@ -49,7 +49,7 @@ public class Panels {
         registerKeyboardNotifications()
         // Prepare the view placement, saving the safeArea.
         panelHeight = config.heightConstant ?? panel.headerHeight.constant
-        panel.headerHeight.constant = panelHeight + UIApplication.safeAreaTop()
+        panel.headerHeight.constant = panelHeight + UIApplication.safeAreaBottom()
         setupGestures(headerView: panel.headerPanel, superview: container)
     }
 

@@ -66,7 +66,7 @@ public struct PanelConfiguration {
     }
 
     internal func visibleArea() -> CGFloat {
-        let visible = panelVisibleArea + UIApplication.safeAreaBottom() + panelMargin
+        let visible = panelVisibleArea + UIApplication.safeAreaBottom() + (panelMargin * 2)
         return visible
     }
 }
