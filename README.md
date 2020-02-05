@@ -116,7 +116,7 @@ Add the line `github "antoniocasero/Panels"` to your `Cartfile`
 ### SPM
 ```
 dependencies: [
-  .package(url: "https://github.com/antoniocasero/Panels.git", from: "2.1.0")
+  .package(url: "https://github.com/antoniocasero/Panels.git", from: "2.2.3")
 ]
 ```
 
