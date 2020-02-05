@@ -47,8 +47,8 @@ import UIKit
         blurView.translatesAutoresizingMaskIntoConstraints = false
         insertSubview(blurView, at: 0)
         NSLayoutConstraint.activate([
-            blurView.heightAnchor.constraint(equalTo: self.heightAnchor),
-            blurView.widthAnchor.constraint(equalTo: self.widthAnchor),
+            blurView.heightAnchor.constraint(equalTo: heightAnchor),
+            blurView.widthAnchor.constraint(equalTo: widthAnchor),
         ])
     }
 }

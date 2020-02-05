@@ -72,7 +72,7 @@ public class Panels {
 
     public func dismiss(completion: (() -> Void)? = nil) {
         panel?.headerHeight.constant = panelHeight
-        guard let panelView = self.panel?.view else {
+        guard let panelView = panel?.view else {
             completion?()
             return
         }

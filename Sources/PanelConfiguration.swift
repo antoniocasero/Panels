@@ -46,7 +46,7 @@ public struct PanelConfiguration {
 
     // Animation duration when the panel is dimissed
     public var dismissAnimationDuration: Double = 0.3
-    
+
     /// Observe keyboard events
     public var keyboardObserver = true
 
