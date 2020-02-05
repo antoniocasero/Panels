@@ -22,7 +22,7 @@ let package = Package(
         .target(
             name: "Panels",
             dependencies: [],
-            path: "Sources",
+            path: "Sources"
         ),
         .testTarget(
             name: "PanelsTests",
